@@ -1,14 +1,11 @@
-% PandemicAI: HRI 2027 Short Contributions (Code).
-% Anonymous review version; author notes and camera-ready funding text are separate.
+% HRI Pioneers 2027 -- anonymous extended abstract.
+% Limits: 2 pages + up to 1 page of references; abstract ~100-150 words.
+% Anonymisation (Pioneers rule): describe own prior work in first person, but
+% anonymise those entries in the reference list (see references.bib).
 \documentclass[sigconf,review,anonymous,nonacm]{acmart}
 \setcopyright{none}
 \settopmatter{printacmref=false}
 \acmConference[HRI '27]{ACM/IEEE International Conference on Human-Robot Interaction}{2027}{}
-\usepackage{array}
-% Compact bullet item for table cells (hanging indent, no extra spacing).
-\newcommand{\ti}{\par\noindent\hangindent=0.7em\hangafter=1\makebox[0.7em][l]{\textbullet}}
-\newcommand{\platform}{\textit{PandemicAI}}
-\newcommand{\reviewrepository}{https://anonymous.4open.science/r/pandemicSubmission-230B}
 
 \begin{document}
 \raggedbottom
@@ -16,34 +13,68 @@
 \subtitle{Data-Efficient Adapters for Full-Duplex Human--Robot Collaboration}
 
 \begin{abstract}
-Collaborative board games provide socially rich, rule-based environments with measurable outcomes, making them valuable testbeds for studying embodied human--agent collaboration. We present \platform{}, an open-source platform connecting a digital game interface, a game engine with an inspectable planner, a robot platform, and a dialog manager with two reference implementations using large language models (LLMs). Through dialog, the user can change the robot's plan, which the robot then carries out through coordinated speech, gaze, facial behaviour, and actions on the shared digital board. A pilot in which ten participants completed twenty games demonstrates end-to-end operation. Additional data collection and virtual reality (VR) adaptations of the scenario illustrate its reuse for interaction and social-perception research, offering a route to prototyping agents before physical deployment. We release the game interface, game engine, robot platform, and dialog manager to support reproducible research on decision making and communication in collaborative human--robot interaction.
-
-%We commit to maintaining a versioned core and documented research branches as a reusable experimental foundation for studying decision making, multimodal communication, and human--robot collaboration.
-
+Large language models have largely solved \emph{what} a robot should say; in collaborative tasks the harder questions are \emph{when}, \emph{where}, and \emph{whether} to say it. Full-duplex speech models listen and speak at once and can act through tool calls, yet off the shelf they talk too much, act too rarely, and cannot be retrained on the few interactions an HRI study yields. My research asks how such models can be adapted to human--robot collaboration from small data. I built a collaborative-game testbed with an aligned multimodal corpus, and developed supervision signals ranging from observed behaviour to self-reported enjoyment and measured brain activity. My current work steers a frozen full-duplex model by reading its hidden state and biasing its output logits; offline, this readout doubles turn-onset recall at a fixed false-start rate compared with the model's own output head. Next, I will add gaze as an input and output channel and close the loop from human signals.
 \end{abstract}
 
 \begin{CCSXML}
 <ccs2012>
  <concept><concept_id>10003120.10003121</concept_id><concept_desc>Human-centered computing~Human computer interaction (HCI)</concept_desc><concept_significance>500</concept_significance></concept>
- <concept><concept_id>10003120.10003121.10003124.10010870</concept_id><concept_desc>Human-centered computing~Natural language interfaces</concept_desc><concept_significance>300</concept_significance></concept>
+ <concept><concept_id>10010147.10010178.10010179</concept_id><concept_desc>Computing methodologies~Natural language processing</concept_desc><concept_significance>300</concept_significance></concept>
 </ccs2012>
 \end{CCSXML}
 \ccsdesc[500]{Human-centered computing~Human computer interaction (HCI)}
-\ccsdesc[300]{Human-centered computing~Natural language interfaces}
-\keywords{Human--robot collaboration, cooperative games, open-source software, large language models, multimodal interaction}
+\ccsdesc[300]{Computing methodologies~Natural language processing}
+\keywords{Human--robot collaboration, full-duplex dialogue, turn-taking, model steering, data efficiency}
 
 \begin{teaserfigure}
  \centering
- \includegraphics[width=.80\textwidth]{figures/platform.png}
- \caption{A user and a Furhat teammate share a digital Pandemic board. The game engine supplies state and plans to the dialog manager; tagged speech coordinates robot behaviour with visible game actions. The robot moves digital pieces through the game interface.}
- \Description{A participant sits at a digital tabletop opposite a Furhat robot. An overlaid architecture connects the interface to the game engine, speech recognition, and dialog manager, which sends text with multimodal tags to the robot.}
- \label{fig:platform}
+ \includegraphics[width=\textwidth]{figures/header.pdf}
+ \caption{Research overview. (1)~Testbed: a participant and a Furhat robot play a collaborative game on a shared touchscreen. (2)~A frozen full-duplex model hears the partner and the task state and decides every 80\,ms whether to speak, act through tool calls, or (future work, dashed) look; a steering module reads its hidden state $h_t$ and biases its output logits. (3)~The steering is supervised by (a)~observed human behaviour, (b)~self-reported experience, and (c)~measured signals.}
+ \Description{Three panels in one row. Left: photo of a participant at a touchscreen table with a game map, a Furhat robot head opposite. Middle: block diagram; partner audio, task state and partner gaze feed an LLM, whose hidden state feeds text, function and gaze heads; their outputs pass through a bias block to speech, tool calls and robot gaze. A black steering block reads the hidden state and drives the bias. Gaze elements are dashed. Right: three boxes, observed (audio, words, gaze, face and game tracks), self-reported (engagement, enjoyment, cognitive effort ratings) and measured (brain activation, eye tracking, task performance), joined by a bracket arrow into the steering block.}
+ \label{fig:overview}
 \end{teaserfigure}
 \maketitle
 
+\section{Motivation and Background}
 
+Robots that collaborate with people must fit a specific task, partner, and body, but the data an HRI study produces is small: tens of participants and a few hours of interaction. Pretrained conversational models are learned from orders of magnitude more human--human or human--assistant dialogue, and the behaviours that matter most in collaboration, such as turn-taking~\cite{skantze2021turn}, do not transfer for free. Adaptation is therefore unavoidable, and it has to be data-efficient.
 
-% Camera-ready funding text and public repository are in the separate author notes.
+Large language models (LLMs) have made robots fluent in \emph{what} to say. Cascaded ASR--LLM--TTS pipelines, however, are turn-based: they cannot speak while listening, and they handle timing with silence thresholds. Real-time multimodal LLMs combined with tool calling now offer a modern recipe for situated, embodied conversation~\cite{lee2026recipe}, but they are closed services whose internal decisions cannot be inspected or changed. Open full-duplex models~\cite{defossez2024moshi,nvidia2026voicechat} make those decisions explicit: every 80\,ms the model emits a token on a text channel (wait, start, or stop speaking) and on a separate function channel (call a tool or not). \emph{When} and \emph{whether} to speak or act become single tokens whose logits can be read and changed.
+
+\textbf{How to steer.} Interventions on LLMs differ in where they write into the computation, which trades data needs against precision. \emph{Context} interventions (prompts, injected state) need no data but shape \emph{what} the model says more than \emph{when}. \emph{Soft embeddings} (prompt and prefix tuning~\cite{lester2021prompt,li2021prefix}) are learned but static, and their influence fades over a long interaction. \emph{Weight} updates (adapters, LoRA, RLHF, DPO~\cite{houlsby2019adapters,hu2022lora,ouyang2022rlhf,rafailov2023dpo}) are expressive but need far more data than HRI provides, and risk eroding conversational ability. \emph{Activation} steering~\cite{turner2023actadd,rimsky2024caa,zou2023repe,li2023iti} adds vectors to the residual stream; it is data-efficient but shifts everything downstream, including what is said. \emph{Logit} steering~\cite{dathathri2020pplm,yang2021fudge,krause2021gedi} reweights the next-token distribution. Finally, \emph{output} overrides replace the chosen token after the fact.
+
+\textbf{Why logits.} In a full-duplex model the decisions I want to change \emph{are} tokens, so biasing their logits is the most targeted intervention available. It leaves the backbone frozen, is bounded and auditable, and needs only a small readout trained from a few interactions. My approach therefore \emph{reads} the hidden state, which carries more information than the output head exposes (Sec.~\ref{sec:current}), and \emph{writes} only the logits of the turn-taking and action tokens (Fig.~\ref{fig:overview}, part~2).
+
+\textbf{Research questions.} \emph{How can a pretrained full-duplex model be adapted to task-oriented human--robot collaboration from the small data HRI can collect?} \textbf{RQ1}: Where should the intervention act, and can the model's own hidden state supply the signal? \textbf{RQ2}: Which human signals (observed, self-reported, or measured) should supervise it? \textbf{RQ3}: Does adding gaze as an input and output channel make steering more effective in embodied collaboration?
+
+\section{Prior Work: Testbed and Supervision}
+
+\textbf{Testbed (Fig.~\ref{fig:overview}, part~1).} I co-developed an open platform in which a participant and a Furhat robot~\cite{al2012furhat} play a digital adaptation of the cooperative board game \emph{Pandemic} on a shared touchscreen, with an inspectable game engine and an LLM dialogue manager; a pilot with ten participants and twenty games demonstrated end-to-end operation~\cite{anon2026platform}. With it I collected a corpus of 70 interactions with 36 participants, with diarised word-level transcripts annotated for interaction failures, isolated participant and robot audio, facial action units, head pose and gaze targets, aligned with game events, robot logs, and questionnaires~\cite{anon2026dataset}. This corpus provides the \emph{observed} human reference that steering should match (part~3a).
+
+\textbf{Self-reported experience (part~3b).} Self-reports are the ground truth for experience but arrive once, after the interaction. Speech-to-Joy predicts a user's post-interaction enjoyment from frozen self-supervised speech embeddings; its predictions correlate significantly with self-reports and outperform an experienced HRI annotator and heavier LLM-based baselines, while remaining light enough for real-time use~\cite{anon2025joy}. It is a candidate online proxy for a self-reported objective.
+
+\textbf{Measured signals (part~3c).} To capture cognitive state continuously, I adapted a multimodal whole-brain fMRI foundation model to live dyadic conversation, improving held-out prediction by 15\% over a strong ridge encoder~\cite{anon2026brainconv}. Across two human--robot fMRI corpora with 70 participants, I found that transfer between human--human and human--robot conversation depends on multimodal dynamics, above all the partner's visual behaviour, rather than on partner category~\cite{anon2026brainhri}. This result is part of the case for embodiment (Sec.~\ref{sec:future}). Eye tracking and task performance from the testbed complete the measured signals.
+
+\section{Current Work: Steering a Full-Duplex Model}
+\label{sec:current}
+
+I ported an open 11B full-duplex model with a separate tool-calling channel~\cite{nvidia2026voicechat} to on-device inference and connected it to the testbed: Furhat speaks its audio, and its tool calls act on the board. To study turn-taking against a human reference, I replay corpus sessions with the model in one partner's seat.
+
+\textbf{Off-the-shelf behaviour is misaligned.} The model proposes speech onsets about 3.5$\times$ as often as the participant it replaces, yet matches only a quarter of the participant's actual onsets (within $\pm$960\,ms). Pretrained turn-taking models do not close the gap: voice activity projection~\cite{ekstedt2022vap} applied zero-shot scores below a one-bit previous-speaker rule (macro-F1 0.58 vs.\ 0.76).
+
+\textbf{Where to intervene (RQ1).} Five rewrites of the system prompt did not change when the model acts, whereas restructuring its \emph{input} did: pushing the board state as tool responses and splitting each turn into propose-then-act raised a scenario suite from 5/14 to 10/15 passing. Overrides after the argmax fail in two ways. An 85\% per-frame veto reduced speech by only 35\%, because the model re-proposes, and denying every proposal silenced it within 2--3 minutes, with no recovery once the gate reopened. Interventions before the argmax work. Masking the tool-call token removed stray calls entirely, and at sentence boundaries stopping is only 2--6 logits from winning, so a nudge suffices.
+
+\textbf{The hidden state knows more than the head (RQ1).} A small recurrent readout over $h_t$ predicts the partner's next turn onset with AUC 0.87 (leave-one-participant-out, 18 participants, fewer than 400 labelled onsets), against 0.51 for the model's own start-versus-wait margin. At the same false-start rate (about five per minute), it roughly doubles onset recall, from 37\% to 72\%. The signal is in the state, and it can be learned from one study's worth of data. These results are offline and with the model in the participant's seat; re-extracting in the robot's seat and evaluating closed-loop are the immediate next steps.
+
+\section{Future Work}
+\label{sec:future}
+
+\textbf{(a) Embodiment: a gaze channel (RQ3).} The model currently hears its partner but cannot see them, and it cannot direct its own gaze. I will add the partner's gaze as an input stream and a gaze head that emits discrete gaze tokens alongside speech, following how facial motion has been added to full-duplex models~\cite{jiang2026moshiface} with finite scalar quantisation~\cite{mentzer2024fsq}. Two observations motivate this. In the corpus, the robot looking at the participant predicts the participant's next onset even when read a second earlier, so gaze is a turn-yielding lever the robot controls. And the brain-encoding results point to the partner's visual behaviour as the largest difference between human and robot partners. Gaze logits can then be steered like speech logits.
+
+\textbf{(b) Closing the loop (RQ2).} The readout is currently trained to match \emph{observed} behaviour. I will supervise it with \emph{self-reported} and \emph{measured} signals, comparing two routes. \emph{Supervised}: predicted engagement, enjoyment, or task progress serve as regression targets that calibrate the bias for each partner and moment. \emph{Reinforcement learning}: the bias is a low-dimensional policy over a handful of logits, so it can be optimised from these signals as rewards with sample-efficient methods (contextual bandits, policy gradients over the readout), first offline on the corpus and then online. This is far cheaper than RLHF or DPO on the weights~\cite{ouyang2022rlhf,rafailov2023dpo}. A safety constraint follows from the overrides finding above: the policy may bias, but never deny every turn. The comparison also makes explicit a tension that runs through the thesis, between matching human--human norms and maximising \emph{this} partner's experience.
+
+\textbf{Contribution to HRI.} This work offers a recipe for adapting pretrained full-duplex models to embodied collaboration with the data a single study produces. It provides evidence on where steering must act, a testbed and corpus to evaluate it, and a path from observed behaviour to human-centred supervision.
+
 \clearpage
 \balance
 \bibliographystyle{ACM-Reference-Format}

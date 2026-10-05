@@ -1,1259 +1,174 @@
-@article{rato2023robots,
-  title={Robots in games},
-  author={Rato, Diogo and Correia, Filipa and Pereira, Andr{\'e} and Prada, Rui},
-  journal={International Journal of Social Robotics},
-  volume={15},
-  number={1},
-  pages={37--57},
-  year={2023},
-  publisher={Springer}
+% ---------------------------------------------------------------------------
+% Own prior work, anonymised as the HRI Pioneers call requires:
+% "anonymize the work in the reference section" (title and authors omitted).
+% De-anonymise for camera-ready.
+% ---------------------------------------------------------------------------
+@inproceedings{anon2025joy,
+  author    = {{Anonymous}},
+  title     = {Title and authors omitted for anonymous review},
+  booktitle = {Proceedings of the International Conference on Multimodal Interaction (ICMI)},
+  year      = {2025}
+}
+@misc{anon2026platform,
+  author = {{Anonymous}},
+  title  = {Title and authors omitted for anonymous review},
+  note   = {Under review},
+  year   = {2026}
+}
+@misc{anon2026dataset,
+  author = {{Anonymous}},
+  title  = {Title and authors omitted for anonymous review},
+  note   = {Under review},
+  year   = {2026}
+}
+@misc{anon2026brainhri,
+  author = {{Anonymous}},
+  title  = {Title and authors omitted for anonymous review},
+  note   = {Under review},
+  year   = {2026}
+}
+@misc{anon2026brainconv,
+  author = {{Anonymous}},
+  title  = {Title and authors omitted for anonymous review},
+  note   = {Under review},
+  year   = {2026}
 }
 
-@inproceedings{pereira2014improving,
-  title={Improving social presence in human-agent interaction},
-  author={Pereira, Andre and Prada, Rui and Paiva, Ana},
-  booktitle={Proceedings of the SIGCHI conference on human factors in computing systems},
-  pages={1449--1458},
-  year={2014}
-}
-
-@inproceedings{skantze2015collaborative,
-  title={A collaborative human-robot game as a test-bed for modelling multi-party, situated interaction},
-  author={Skantze, Gabriel and Johansson, Martin and Beskow, Jonas},
-  booktitle={International Conference on Intelligent Virtual Agents},
-  pages={348--351},
-  year={2015},
-  organization={Springer}
-}
-
-@inproceedings{correia2017social,
-  title={A social robot as a card game player},
-  author={Correia, Filipa and Alves-Oliveira, Patr{\'\i}cia and Ribeiro, Tiago and Melo, Francisco and Paiva, Ana},
-  booktitle={Proceedings of the AAAI conference on artificial intelligence and interactive digital entertainment},
-  volume={13},
-  number={1},
-  pages={23--29},
-  year={2017}
-}
-
-@article{zhang2025open,
-  title={An open-source reproducible chess robot for human-robot interaction research},
-  author={Zhang, Renchi and de Winter, Joost and Dodou, Dimitra and Seyffert, Harleigh and Eisma, Yke Bauke},
-  journal={Frontiers in Robotics and AI},
-  volume={12},
-  pages={1436674},
-  doi={10.3389/frobt.2025.1436674},
-  year={2025},
-  publisher={Frontiers Media SA}
-}
-
-@inproceedings{sauma2020paindemic,
-  title={{Paindemic}: A Planning Agent for {Pandemic}},
-  author={Sauma-Chac{\'o}n, Pablo and Eger, Markus},
-  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence and Interactive Digital Entertainment},
-  volume={16},
-  number={1},
-  pages={287--293},
-  year={2020}
-}
-
-@inproceedings{sauma2021evaluating,
-  title={Evaluating a plan recognition agent for the game {Pandemic} with human players},
-  author={Sauma-Chac{\'o}n, Pablo and Eger, Markus},
-  booktitle={2021 IEEE Conference on Games (CoG)},
-  pages={1--7},
-  year={2021},
-  organization={IEEE}
-}
-
-@inproceedings{hu2023language,
-  title={Language Instructed Reinforcement Learning for Human-{AI} Coordination},
-  author={Hu, Hengyuan and Sadigh, Dorsa},
-  booktitle={International Conference on Machine Learning},
-  pages={13584--13598},
-  year={2023},
-  organization={PMLR}
-}
-
-@misc{vad,
-  author = {Silero Team},
-  title = {Silero VAD: pre-trained enterprise-grade Voice Activity Detector (VAD), Number Detector and Language Classifier},
-  year = {2024},
-  publisher = {GitHub},
-  journal = {GitHub repository},
-  howpublished = {\url{https://github.com/snakers4/silero-vad}},
-  email = {hello@silero.ai}
-}
-
-@inproceedings{radford2023whisper,
-  title     = {Robust Speech Recognition via Large-Scale Weak Supervision},
-  author    = {Radford, Alec and Kim, Jong Wook and Xu, Tao and Brockman, Greg and McLeavey, Christine and Sutskever, Ilya},
-  booktitle = {Proceedings of the 40th International Conference on Machine Learning},
-  series    = {PMLR},
-  volume    = {202},
-  pages     = {28492--28518},
-  year      = {2023},
-  url       = {https://proceedings.mlr.press/v202/radford23a.html}
-}
-
-@misc{ggml_whispercpp,
-  author       = {GGML Org and contributors},
-  title        = {whisper.cpp: High-performance C/C++ inference of OpenAI's Whisper},
-  year         = {2025},
-  howpublished = {\url{https://github.com/ggml-org/whisper.cpp}},
-}
-
-@misc{macoron_whisper_unity,
-  author       = {Macoron},
-  title        = {whisper.unity: Unity bindings for whisper.cpp (includes WhisperManager)},
-  year         = {2025},
-  howpublished = {\url{https://github.com/Macoron/whisper.unity}},
-}
-
-@incollection{al2012furhat,
-  title={Furhat: a back-projected human-like robot head for multiparty human-machine interaction},
-  author={Al Moubayed, Samer and Beskow, Jonas and Skantze, Gabriel and Granstr{\"o}m, Bj{\"o}rn},
-  booktitle={Cognitive behavioural systems: COST 2102 international training school, dresden, Germany, february 21-26, 2011, revised selected papers},
-  pages={114--130},
-  year={2012},
-  publisher={Springer}
-}
-
+% ---------------------------------------------------------------------------
+% Turn-taking, full-duplex and embodied conversation
+% ---------------------------------------------------------------------------
 @article{skantze2021turn,
-  title={Turn-taking in conversational systems and human-robot interaction: a review},
-  author={Skantze, Gabriel},
-  journal={Computer Speech \& Language},
-  volume={67},
-  pages={101178},
-  year={2021},
-  publisher={Elsevier}
-}
-
-@incollection{kopp2006bml,
-  author = {Kopp, Stefan and Krenn, Brigitte and Marsella, Stacy and Marshall, Andrew N. and Pelachaud, Catherine and Pirker, Hannes and Th{\'o}risson, Kristinn R. and Vilhj{\'a}lmsson, Hannes},
-  title = {Towards a Common Framework for Multimodal Generation: The {Behavior Markup Language}},
-  booktitle = {Intelligent Virtual Agents},
-  series = {Lecture Notes in Computer Science},
-  volume = {4133},
-  pages = {205--217},
-  year = {2006},
-  publisher = {Springer},
-  doi = {10.1007/11821830_17}
-}
-
-@article{sfikas2021playing,
-  title={Playing against the board: Rolling horizon evolutionary algorithms against {Pandemic}},
-  author={Sfikas, Konstantinos and Liapis, Antonios},
-  journal={IEEE Transactions on Games},
-  volume={14},
-  number={3},
-  pages={339--349},
-  year={2022},
-  publisher={IEEE},
-  doi={10.1109/TG.2021.3069766}
-}
-
-@article{meta2022human,
-  title={Human-level play in the game of Diplomacy by combining language models with strategic reasoning},
-  author={{Meta Fundamental AI Research Diplomacy Team} and Bakhtin, Anton and Brown, Noam and Dinan, Emily and Farina, Gabriele and Flaherty, Colin and Fried, Daniel and Goff, Andrew and Gray, Jonathan and Hu, Hengyuan and others},
-  journal={Science},
-  volume={378},
-  number={6624},
-  pages={1067--1074},
-  year={2022},
-  publisher={American Association for the Advancement of Science}
-}
-
-@inproceedings{zhang2024proagent,
-  title={{ProAgent}: Building Proactive Cooperative Agents with Large Language Models},
-  author={Zhang, Ceyao and Yang, Kaijie and Hu, Siyi and Wang, Zihao and Li, Guanghe and Sun, Yihang and Zhang, Cheng and Zhang, Zhaowei and Liu, Anji and Zhu, Song-Chun and others},
-  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
-  volume={38},
-  number={16},
-  pages={17591--17599},
-  year={2024}
-}
-
-@inproceedings{kim2024understanding,
-  title={Understanding Large-Language Model ({LLM})-Powered Human-Robot Interaction},
-  author={Kim, Callie Y and Lee, Christine P and Mutlu, Bilge},
-  booktitle={Proceedings of the 2024 ACM/IEEE international conference on human-robot interaction},
-  pages={371--380},
-  year={2024}
-}
-
-@inproceedings{mahadevan2024generative,
-  title={Generative expressive robot behaviors using large language models},
-  author={Mahadevan, Karthik and Chien, Jonathan and Brown, Noah and Xu, Zhuo and Parada, Carolina and Xia, Fei and Zeng, Andy and Takayama, Leila and Sadigh, Dorsa},
-  booktitle={Proceedings of the 2024 ACM/IEEE International Conference on Human-Robot Interaction},
-  pages={482--491},
-  year={2024}
-}
-
-@inproceedings{santana2025speech,
-  title={{Speech-to-Joy}: Self-Supervised Features for Enjoyment Prediction in Human--Robot Conversation},
-  author={Santana, Ricardo and Irfan, Bahar and Lagerstedt, Erik and Skantze, Gabriel and Pereira, Andre},
-  booktitle={Proceedings of the 27th International Conference on Multimodal Interaction},
-  pages={238--248},
-  year={2025},
-  doi={10.1145/3716553.3750747}
-}
-
-@mastersthesis{wicklund2025gaze,
-  author = {Wicklund, Niklas},
-  title = {Gaze-Based Intent Recognition in Virtual Reality: A Case Study of {Pandemic: Hot Zone -- Europe}},
-  school = {KTH Royal Institute of Technology},
-  year = {2025},
-  url = {https://urn.kb.se/resolve?urn=urn:nbn:se:kth:diva-361864}
-}
-
-@mastersthesis{quan2026enjoyment,
-  author = {Quan, Jiongyi},
-  title = {Enhancing User Enjoyment Detection in Virtual Reality with Facial Expression Data: Investigating the Impact of Facial Signals on Predictive Performance},
-  school = {KTH Royal Institute of Technology},
-  year = {2026},
-  url = {https://kth.diva-portal.org/smash/record.jsf?pid=diva2:2052230}
-}
-
-@inproceedings{cherakara2023furchat,
-  title = {{FurChat}: An Embodied Conversational Agent using {LLMs}, Combining Open and Closed-Domain Dialogue with Facial Expressions},
-  author = {Cherakara, Neeraj and Varghese, Finny and Shabana, Sheena and Nelson, Nivan and Karukayil, Abhiram and Kulothungan, Rohith and Afil Farhan, Mohammed and Nesset, Birthe and Moujahid, Meriam and Dinkar, Tanvi and Rieser, Verena and Lemon, Oliver},
-  booktitle = {Proceedings of the 24th Annual Meeting of the Special Interest Group on Discourse and Dialogue},
-  year = {2023},
-  pages = {588--592},
-  publisher = {Association for Computational Linguistics},
-  doi = {10.18653/v1/2023.sigdial-1.55},
-  url = {https://aclanthology.org/2023.sigdial-1.55/}
-}
-
-@mastersthesis{tuominen2020rdr2,
-  author       = {Jussi Tuominen},
-  title        = {A Case Study of Red Dead Redemption Series},
-  school       = {Tampere University},
-  year         = {2020},
-  address      = {Tampere, Finland},
-  type         = {Master's Thesis},
-  url          = {https://trepo.tuni.fi/handle/10024/121658}
-}
-
-@inproceedings{santana2025speech,
-  title={Speech-to-Joy: Self-Supervised Features for Enjoyment Prediction in Human--Robot Conversation},
-  author={Santana, Ricardo and Irfan, Bahar and Lagerstedt, Erik and Skantze, Gabriel and Pereira, Andre},
-  booktitle={Proceedings of the 27th International Conference on Multimodal Interaction},
-  pages={238--248},
-  year={2025}
-}
-
-@inproceedings{andrist2014conversational,
-  title={Conversational gaze aversion for humanlike robots},
-  author={Andrist, Sean and Tan, Xiang Zhi and Gleicher, Michael and Mutlu, Bilge},
-  booktitle={Proceedings of the 2014 ACM/IEEE international conference on Human-robot interaction},
-  pages={25--32},
-  year={2014}
-}
-
-@article{doherty1997face,
-  title={Face-to-face and video-mediated communication: A comparison of dialogue structure and task performance.},
-  author={Doherty-Sneddon, Gwyneth and Anderson, Anne and O'malley, Claire and Langton, Steve and Garrod, Simon and Bruce, Vicki},
-  journal={Journal of experimental psychology: applied},
-  volume={3},
-  number={2},
-  pages={105},
-  year={1997},
-  publisher={American Psychological Association}
-}
-
-@article{doherty2002development,
-  title={Development of gaze aversion as disengagement from visual information.},
-  author={Doherty-Sneddon, Gwyneth and Bruce, Vicki and Bonner, Lesley and Longbotham, Sarah and Doyle, Caroline},
-  journal={Developmental psychology},
-  volume={38},
-  number={3},
-  pages={438},
-  year={2002},
-  publisher={American Psychological Association}
-}
-
-@inproceedings{irfan2025between,
-  title={Between you and me: Ethics of self-disclosure in human-robot interaction},
-  author={Irfan, Bahar and Skantze, Gabriel},
-  booktitle={2025 20th ACM/IEEE International Conference on Human-Robot Interaction (HRI)},
-  pages={1357--1362},
-  year={2025},
-  organization={IEEE}
-}
-
-
-@inproceedings{schaffer2022development,
-  title={Development and preliminary validation of the enjoyment questionnaire and the sources of enjoyment questionnaire},
-  author={Schaffer, Owen},
-  booktitle={CHI Conference on Human Factors in Computing Systems Extended Abstracts},
-  pages={1--7},
-  year={2022}
-}
-@misc{ijsselsteijn2013game,
-  title={The game experience questionnaire},
-  author={IJsselsteijn, Wijnand A and De Kort, Yvonne AW and Poels, Karolien},
-  year={2013},
-  publisher={Technische Universiteit Eindhoven}
-}
-@article{edmondson1999Psychological,
-author = {Amy Edmondson},
-title ={Psychological Safety and Learning Behavior in Work Teams},
-
-journal = {Administrative Science Quarterly},
-volume = {44},
-number = {2},
-pages = {350-383},
-year = {1999},
-doi = {10.2307/2666999},
-
-URL = {https://doi.org/10.2307/2666999},
-eprint = {https://doi.org/10.2307/2666999}
-,
-    abstract = { This paper presents a model of team learning and tests it in a multimethod field study. It introduces the construct of team psychological safety—a shared belief held by members of a team that the team is safe for interpersonal risk taking—and models the effects of team psychological safety and team efficacy together on learning and performance in organizational work teams. Results of a study of 51 work teams in a manufacturing company, measuring antecedent, process, and outcome variables, show that team psychological safety is associated with learning behavior, but team efficacy is not, when controlling for team psychological safety. As predicted, learning behavior mediates between team psychological safety and team performance. The results support an integrative perspective in which both team structures, such as context support and team leader coaching, and shared beliefs shape team outcomes.}
-}
-@article{rammstedt2007measuring,
-  title={Measuring personality in one minute or less: A 10-item short version of the Big Five Inventory in English and German},
-  author={Rammstedt, Beatrice and John, Oliver P},
-  journal={Journal of research in Personality},
-  volume={41},
-  number={1},
-  pages={203--212},
-  year={2007},
-  publisher={Elsevier}
-}
-@article{lee2006physically,
-  title={Are physically embodied social agents better than disembodied social agents?: The effects of physical embodiment, tactile interaction, and people's loneliness in human--robot interaction},
-  author={Lee, Kwan Min and Jung, Younbo and Kim, Jaywoo and Kim, Sang Ryong},
-  journal={International journal of human-computer studies},
-  volume={64},
-  number={10},
-  pages={962--973},
-  year={2006},
-  publisher={Elsevier}
-}
-
-@misc{heerink2010assessing,
-  title={Assessing acceptance of assistive social agent technology by older adults: the almere model},
-  author={Heerink, Marcel and Kr{\"o}se, Ben and Evers, Vanessa and Wielinga, Bob},
-  year={2010},
-  publisher={Springer}
-}
-
-@article{iio2020twin,
-  title={Twin-robot dialogue system with robustness against speech recognition failure in human-robot dialogue with elderly people},
-  author={Iio, Takamasa and Yoshikawa, Yuichiro and Chiba, Mariko and Asami, Taichi and Isoda, Yoshinori and Ishiguro, Hiroshi},
-  journal={Applied Sciences},
-  volume={10},
-  number={4},
-  pages={1522},
-  year={2020},
-  publisher={MDPI}
-}
-
-@article{reimann2024survey,
-author = {Reimann, Merle M. and Kunneman, Florian A. and Oertel, Catharine and Hindriks, Koen V.},
-title = {A Survey on Dialogue Management in Human-robot Interaction},
-year = {2024},
-issue_date = {June 2024},
-publisher = {Association for Computing Machinery},
-address = {New York, NY, USA},
-volume = {13},
-number = {2},
-abstract = {As social robots see increasing deployment within the general public, improving the interaction with those robots is essential. Spoken language offers an intuitive interface for the human–robot interaction (HRI), with dialogue management (DM) being a key component in those interactive systems. Yet, to overcome current challenges and manage smooth, informative, and engaging interaction, a more structural approach to combining HRI and DM is needed. In this systematic review, we analyze the current use of DM in HRI and focus on the type of dialogue manager used, its capabilities, evaluation methods, and the challenges specific to DM in HRI. We identify the challenges and current scientific frontier related to the DM approach, interaction domain, robot appearance, physical situatedness, and multimodality.},
-journal = {J. Hum.-Robot Interact.},
-month = jun,
-articleno = {22},
-numpages = {22},
-keywords = {Spoken interaction, dialogue management, social robots}
-}
-
-@article{rato2023robots,
-  title={Robots in games},
-  author={Rato, Diogo and Correia, Filipa and Pereira, Andr{\'e} and Prada, Rui},
-  journal={International Journal of Social Robotics},
-  volume={15},
-  number={1},
-  pages={37--57},
-  year={2023},
-  publisher={Springer}
-}
-
-@article{bartneck2009does,
-  title={Does the design of a robot influence its animacy and perceived intelligence?},
-  author={Bartneck, Christoph and Kanda, Takayuki and Mubin, Omar and Al Mahmud, Abdullah},
-  journal={International Journal of Social Robotics},
-  volume={1},
-  number={2},
-  pages={195--204},
-  year={2009},
-  publisher={Springer}
-}
-
-@inproceedings{xin2006exploring,
-  title={Exploring human-robot interaction through telepresence board games},
-  author={Xin, Min and Sharlin, Ehud},
-  booktitle={International Conference on Artificial Reality and Telexistence},
-  pages={249--261},
-  year={2006},
-  organization={Springer}
-}
-
-@inproceedings{pereira2012socially,
-  title={Socially present board game opponents},
-  author={Pereira, Andr{\'e} and Prada, Rui and Paiva, Ana},
-  booktitle={International conference on advances in computer entertainment technology},
-  pages={101--116},
-  year={2012},
-  organization={Springer}
-}
-
-@article{jervcic2019affective,
-  title={An affective serious game for collaboration between humans and robots},
-  author={Jer{\v{c}}i{\'c}, Petar and Hagelb{\"a}ck, Johan and Lindley, Craig},
-  journal={Entertainment Computing},
-  volume={32},
-  pages={100319},
-  year={2019},
-  publisher={Elsevier}
-}
-
-@inproceedings{shafti2020real,
-  title={Real-world human-robot collaborative reinforcement learning},
-  author={Shafti, Ali and Tjomsland, Jonas and Dudley, William and Faisal, A Aldo},
-  booktitle={2020 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
-  pages={11161--11166},
-  year={2020},
-  organization={IEEE}
-}
-
-@article{sarker2024cohrt,
-  title={Cohrt: A collaboration system for human-robot teamwork},
-  author={Sarker, Sujan and Green, Haley N and Yasar, Mohammad Samin and Iqbal, Tariq},
-  journal={arXiv preprint arXiv:2410.08504},
-  year={2024}
-}
-
-@inproceedings{skantze2015collaborative,
-  title={A collaborative human-robot game as a test-bed for modelling multi-party, situated interaction},
-  author={Skantze, Gabriel and Johansson, Martin and Beskow, Jonas},
-  booktitle={International Conference on Intelligent Virtual Agents},
-  pages={348--351},
-  year={2015},
-  organization={Springer}
-}
-
-@inproceedings{correia2017social,
-  title={A social robot as a card game player},
-  author={Correia, Filipa and Alves-Oliveira, Patr{\'\i}cia and Ribeiro, Tiago and Melo, Francisco and Paiva, Ana},
-  booktitle={Proceedings of the AAAI conference on artificial intelligence and interactive digital entertainment},
-  volume={13},
-  number={1},
-  pages={23--29},
-  year={2017}
-}
-
-@inproceedings{sauma2020paindemic,
-  title={Paindemic: A planning agent for pandemic},
-  author={Sauma-Chac{\'o}n, Pablo and Eger, Markus},
-  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence and Interactive Digital Entertainment},
-  volume={16},
-  number={1},
-  pages={287--293},
-  year={2020}
-}
-
-@inproceedings{sauma2021evaluating,
-  title={Evaluating a plan recognition agent for the game pandemic with human players},
-  author={Sauma-Chac{\'o}n, Pablo and Eger, Markus},
-  booktitle={2021 IEEE Conference on Games (CoG)},
-  pages={1--7},
-  year={2021},
-  organization={IEEE}
-}
-
-@article{sfikas2021playing,
-  title={Playing against the board: Rolling horizon evolutionary algorithms against pandemic},
-  author={Sfikas, Konstantinos and Liapis, Antonios},
-  journal={IEEE Transactions on Games},
-  volume={14},
-  number={3},
-  pages={339--349},
-  year={2021},
-  publisher={IEEE}
-}
-
-@article{mascarenhas2022fatima,
-  title={Fatima toolkit: Toward an accessible tool for the development of socio-emotional agents},
-  author={Mascarenhas, Samuel and Guimar{\~a}es, Manuel and Prada, Rui and Santos, Pedro A and Dias, Jo{\~a}o and Paiva, Ana},
-  journal={ACM Transactions on Interactive Intelligent Systems (TiiS)},
-  volume={12},
-  number={1},
-  pages={1--30},
-  year={2022},
-  publisher={ACM New York, NY}
-}
-
-@inproceedings{heerink2008enjoyment,
-  title={Enjoyment intention to use and actual use of a conversational robot by elderly people},
-  author={Heerink, Marcel and Kr{\"o}se, Ben and Wielinga, Bob and Evers, Vanessa},
-  booktitle={Proceedings of the 3rd ACM/IEEE international conference on Human robot interaction},
-  pages={113--120},
-  year={2008}
-}
-
-@article{irfan2024human,
-  title={Human-Robot Interaction Conversational User Enjoyment Scale (HRI CUES)},
-  author={Irfan, Bahar and Miniota, Jura and Thunberg, Sofia and Lagerstedt, Erik and Kuoppam{\"a}ki, Sanna and Skantze, Gabriel and Pereira, Andr{\'e}},
-  journal={arXiv preprint arXiv:2405.01354},
-  year={2024}
-}
-
-@article{lu2009exploring,
-  title={Exploring Chinese users’ acceptance of instant messaging using the theory of planned behavior, the technology acceptance model, and the flow theory},
-  author={Lu, Yaobin and Zhou, Tao and Wang, Bin},
-  journal={Computers in human behavior},
-  volume={25},
-  number={1},
-  pages={29--39},
-  year={2009},
-  publisher={Elsevier}
-}
-
-@book{csikszentmihalyi2014flow,
-  title={Flow and the foundations of positive psychology},
-  author={Csikszentmihalyi, Mihaly and Larson, Reed and others},
-  volume={10},
-  year={2014},
-  publisher={Springer}
-}
-
-@book{price2022power,
-  title={The Power of Fun: Why fun is the key to a happy and healthy life},
-  author={Price, Catherine},
-  year={2022},
-  publisher={Random House}
-}
-
-@article{posner2005circumplex,
-  title={The circumplex model of affect: An integrative approach to affective neuroscience, cognitive development, and psychopathology},
-  author={Posner, Jonathan and Russell, James A and Peterson, Bradley S},
-  journal={Development and psychopathology},
-  volume={17},
-  number={3},
-  pages={715--734},
-  year={2005},
-  publisher={Cambridge University Press}
-}
-
-@article{russell1989affect,
-  title={Affect grid: a single-item scale of pleasure and arousal.},
-  author={Russell, James A and Weiss, Anna and Mendelsohn, Gerald A},
-  journal={Journal of personality and social psychology},
-  volume={57},
-  number={3},
-  pages={493},
-  year={1989},
-  publisher={American Psychological Association}
-}
-
-@article{cisnal2022assessment,
-  title={Assessment of the patient’s emotional response with the robhand rehabilitation platform: A case series study},
-  author={Cisnal, Ana and Moreno-SanJuan, Victor and Fraile, Juan Carlos and Turiel, Javier P and De-la-Fuente, Eusebio and S{\'a}nchez-Brizuela, Guillermo},
-  journal={Journal of Clinical Medicine},
-  volume={11},
-  number={15},
-  pages={4442},
-  year={2022},
-  publisher={MDPI}
-}
-
-@inproceedings{irfan2018social,
-author = {Irfan, Bahar and Kennedy, James and Lemaignan, S{\'e}verin and Papadopoulos, Fotios and Senft, Emmanuel and Belpaeme, Tony},
-title = {Social Psychology and Human-Robot Interaction: An Uneasy Marriage},
-booktitle = {Companion of the 2018 ACM/IEEE International Conference on Human-Robot Interaction},
-year = {2018},
-location = {Chicago, IL, USA},
-pages = {13--20},
-keywords = {social psychology, replication crisis, social robotics, human-robot interaction, research methodology},
-publisher = {ACM}
-}
-
-@book{bartneck2024human,
-  title={Human-robot interaction: An introduction},
-  author={Bartneck, Christoph and Belpaeme, Tony and Eyssel, Friederike and Kanda, Takayuki and Keijsers, Merel and {\v{S}}abanovi{\'c}, Selma},
-  year={2024},
-  publisher={Cambridge University Press}
-}
-
-@incollection{mizuchi2019estimation,
-  title={Estimation of subjective evaluation of HRI performance based on objective behaviors of human and robots},
-  author={Mizuchi, Yoshiaki and Inamura, Tetsunari},
-  booktitle={Robot World Cup},
-  pages={201--212},
-  year={2019},
-  publisher={Springer}
-}
-
-@inproceedings{gunes2023affective,
-  title={Affective computing for human-robot interaction research: Four critical lessons for the hitchhiker},
-  author={Gunes, Hatice and Churamani, Nikhil},
-  booktitle={2023 32nd IEEE International Conference on Robot and Human Interactive Communication (RO-MAN)},
-  pages={1565--1572},
-  year={2023},
-  organization={IEEE}
-}
-
-@article{ezzameli2023emotion,
-  title={Emotion recognition from unimodal to multimodal analysis: A review},
-  author={Ezzameli, Kaouther and Mahersia, Hela},
-  journal={Information Fusion},
-  volume={99},
-  pages={101847},
-  year={2023},
-  publisher={Elsevier}
-}
-
-@article{ekman1999basic,
-  title={Basic emotions},
-  author={Ekman, Paul and Dalgleish, Tim and Power, M},
-  journal={San Francisco, USA},
-  year={1999}
-}
-@inproceedings{grerkiat2023applying,
-  title={Applying Self-Assessment Manikin (SAM) to Evaluate the Emotional Responses to the Service Robot Feature},
-  author={Grerkiat, Korbuakaew and Rattawut, Vongvit},
-  booktitle={2023 8th International Conference on Business and Industrial Research (ICBIR)},
-  pages={568--572},
-  year={2023},
-  organization={IEEE}
-}
-
-@inproceedings{pereira2024multimodal,
-  title={Multimodal User Enjoyment Detection in Human-Robot Conversation: The Power of Large Language Models},
-  author={Pereira, Andre and Marcinek, Lubos and Miniota, Jura and Thunberg, Sofia and Lagerstedt, Erik and Gustafson, Joakim and Skantze, Gabriel and Irfan, Bahar},
-  booktitle={Proceedings of the 26th International Conference on Multimodal Interaction},
-  pages={469--478},
-  year={2024}
-}
-
-@inproceedings{correia2019record,
-  title={For the record-A public goods game for exploring human-robot collaboration},
-  author={Correia, Filipa and Mascarenhas, Samuel and Gomes, Samuel and Tulli, Silvia and Santos, Fernando P and Santos, Francisco C and Prada, Rui and Melo, Francisco S and Paiva, Ana},
-  booktitle={Proceedings of the 18th International Conference on Autonomous Agents and MultiAgent Systems},
-  pages={2351--2353},
-  year={2019}
-}
-
-@inproceedings{pereira2014improving,
-  title={Improving social presence in human-agent interaction},
-  author={Pereira, Andre and Prada, Rui and Paiva, Ana},
-  booktitle={Proceedings of the SIGCHI conference on human factors in computing systems},
-  pages={1449--1458},
-  year={2014}
-}
-
-@article{zhang2025open,
-  title={An open-source reproducible chess robot for human-robot interaction research},
-  author={Zhang, Renchi and de Winter, Joost and Dodou, Dimitra and Seyffert, Harleigh and Eisma, Yke Bauke},
-  journal={Frontiers in Robotics and AI},
-  volume={12},
-  pages={1436674},
-  year={2025},
-  publisher={Frontiers Media SA}
-}
-
-@inproceedings{ho2021robomath,
-  title={RoboMath: Designing a learning companion robot to support children’s numerical skills},
-  author={Ho, Hui-Ru and Cagiltay, Bengisu and White, Nathan Thomas and Hubbard, Edward M and Mutlu, Bilge},
-  booktitle={Proceedings of the 20th Annual ACM Interaction Design and Children Conference},
-  pages={283--293},
-  year={2021}
-}
-
-@article{sandoval2022human,
-  title={Human--robot creative interactions: Exploring creativity in artificial agents using a storytelling game},
-  author={Sandoval, Eduardo Ben{\'\i}tez and Sosa, Ricardo and Cappuccio, Massimiliano and Bednarz, Tomasz},
-  journal={Frontiers in Robotics and AI},
-  volume={9},
-  pages={695162},
-  year={2022},
-  publisher={Frontiers Media SA}
-}
-
-@article{brown2019superhuman,
-  title={Superhuman AI for multiplayer poker},
-  author={Brown, Noam and Sandholm, Tuomas},
-  journal={Science},
-  volume={365},
-  number={6456},
-  pages={885--890},
-  year={2019},
-  publisher={American Association for the Advancement of Science}
-}
-
-@article{bard2020hanabi,
-  title={The hanabi challenge: A new frontier for ai research},
-  author={Bard, Nolan and Foerster, Jakob N and Chandar, Sarath and Burch, Neil and Lanctot, Marc and Song, H Francis and Parisotto, Emilio and Dumoulin, Vincent and Moitra, Subhodeep and Hughes, Edward and others},
-  journal={Artificial Intelligence},
-  volume={280},
-  pages={103216},
-  year={2020},
-  publisher={Elsevier}
-}
-
-@article{xu2023exploring,
-  title={Exploring large language models for communication games: An empirical study on werewolf},
-  author={Xu, Yuzhuang and Wang, Shuo and Li, Peng and Luo, Fuwen and Wang, Xiaolong and Liu, Weidong and Liu, Yang},
-  journal={arXiv preprint arXiv:2309.04658},
-  year={2023}
-}
-
-@article{wang2023avalon,
-  title={Avalon's game of thoughts: Battle against deception through recursive contemplation},
-  author={Wang, Shenzhi and Liu, Chang and Zheng, Zilong and Qi, Siyuan and Chen, Shuo and Yang, Qisen and Zhao, Andrew and Wang, Chaofei and Song, Shiji and Huang, Gao},
-  journal={arXiv preprint arXiv:2310.01320},
-  year={2023}
-}
-
-@inproceedings{kim2024understanding,
-  title={Understanding large-language model (llm)-powered human-robot interaction},
-  author={Kim, Callie Y and Lee, Christine P and Mutlu, Bilge},
-  booktitle={Proceedings of the 2024 ACM/IEEE international conference on human-robot interaction},
-  pages={371--380},
-  year={2024}
-}
-
-@article{qiao2023gameeval,
-  title={Gameeval: Evaluating llms on conversational games},
-  author={Qiao, Dan and Wu, Chenfei and Liang, Yaobo and Li, Juntao and Duan, Nan},
-  journal={arXiv preprint arXiv:2308.10032},
-  year={2023}
-}
-
-@article{meta2022human,
-  title={Human-level play in the game of Diplomacy by combining language models with strategic reasoning},
-  author={Meta Fundamental AI Research Diplomacy Team (FAIR)† and Bakhtin, Anton and Brown, Noam and Dinan, Emily and Farina, Gabriele and Flaherty, Colin and Fried, Daniel and Goff, Andrew and Gray, Jonathan and Hu, Hengyuan and others},
-  journal={Science},
-  volume={378},
-  number={6624},
-  pages={1067--1074},
-  year={2022},
-  publisher={American Association for the Advancement of Science}
-}
-
-
-@article{skantze2021turn,
-  title={Turn-taking in conversational systems and human-robot interaction: a review},
-  author={Skantze, Gabriel},
-  journal={Computer Speech \& Language},
-  volume={67},
-  pages={101178},
-  year={2021},
-  publisher={Elsevier}
-}
-@INPROCEEDINGS{skantze2025applying,
-  author={Skantze, Gabriel and Irfan, Bahar},
-  booktitle={2025 20th ACM/IEEE International Conference on Human-Robot Interaction (HRI)}, 
-  title={Applying General Turn-Taking Models to Conversational Human-Robot Interaction}, 
-  year={2025},
-  volume={},
-  number={},
-  pages={859-868},
-  keywords={Voice activity detection;Large language models;Human-robot interaction;Self-supervised learning;Oral communication;Predictive models;Prediction algorithms;Data models;Delays;Robots;turn-taking;conversational AI;large language model;human-robot interaction},
-  doi={10.1109/HRI61500.2025.10973958}}
-
-@article{raux2012optimizing,
-  title={Optimizing the turn-taking behavior of task-oriented spoken dialog systems},
-  author={Raux, Antoine and Eskenazi, Maxine},
-  journal={ACM Transactions on Speech and Language Processing (TSLP)},
-  volume={9},
-  number={1},
-  pages={1--23},
-  year={2012},
-  publisher={ACM New York, NY, USA}
-}
-@article{maier2017towards,
-  title={Towards deep end-of-turn prediction for situated spoken dialogue systems},
-  author={Maier, Angelika and Hough, Julian and Schlangen, David and others},
-  year={2017}
-}
-@inproceedings{ekstedt2021projection,
-  title={Projection of turn completion in incremental spoken dialogue systems},
-  author={Ekstedt, Erik and Skantze, Gabriel},
-  booktitle={Proceedings of the 22nd annual meeting of the special interest group on discourse and dialogue},
-  pages={431--437},
-  year={2021}
-}
-@article{tian2021taxonomy,
-  title={A taxonomy of social errors in human-robot interaction},
-  author={Tian, Leimin and Oviatt, Sharon},
-  journal={ACM Transactions on Human-Robot Interaction (THRI)},
-  volume={10},
-  number={2},
-  pages={1--32},
-  year={2021},
-  publisher={ACM New York, NY, USA}
-}
-
-@article{agashe2023evaluating,
-  title={Evaluating multi-agent coordination abilities in large language models},
-  author={Agashe, Saaket and Fan, Yue and Wang, Xin Eric},
-  year={2023}
-}
-
-@article{chen2024s,
-  title={S-agents: Self-organizing agents in open-ended environments},
-  author={Chen, Jiaqi and Jiang, Yuxian and Lu, Jiachen and Zhang, Li},
-  journal={arXiv preprint arXiv:2402.04578},
-  year={2024}
-}
-
-@article{breazeal2013crowdsourcing,
-  title={Crowdsourcing human-robot interaction: New methods and system evaluation in a public environment},
-  author={Breazeal, Cynthia and DePalma, Nick and Orkin, Jeff and Chernova, Sonia and Jung, Malte},
-  journal={Journal of Human-Robot Interaction},
-  volume={2},
-  number={1},
-  pages={82--111},
-  year={2013},
-  publisher={Journal of Human-Robot Interaction Steering Committee}
-}
-
-@article{akata2020research,
-  title={A research agenda for hybrid intelligence: augmenting human intellect with collaborative, adaptive, responsible, and explainable artificial intelligence},
-  author={Akata, Zeynep and Balliet, Dan and De Rijke, Maarten and Dignum, Frank and Dignum, Virginia and Eiben, Guszti and Fokkens, Antske and Grossi, Davide and Hindriks, Koen and Hoos, Holger and others},
-  journal={Computer},
-  volume={53},
-  number={8},
-  pages={18--28},
-  year={2020},
-  publisher={IEEE}
-}
-@inproceedings{danieli1995metrics,
-  title={Metrics for evaluating dialogue strategies in a spoken language system},
-  author={Danieli, Morena and Gerbino, Elisabetta},
-  booktitle={Proceedings of the 1995 AAAI spring symposium on Empirical Methods in Discourse Interpretation and Generation},
-  volume={16},
-  pages={34--39},
-  year={1995}
-}
-@article{dybkjaer2004evaluation,
-  title={Evaluation and usability of multimodal spoken language dialogue systems},
-  author={Dybkjaer, Laila and Bernsen, Niels Ole and Minker, Wolfgang},
-  journal={Speech Communication},
-  volume={43},
-  number={1-2},
-  pages={33--54},
-  year={2004},
-  publisher={Elsevier}
-}
-
-@inproceedings{hu2023language,
-  title={Language instructed reinforcement learning for human-ai coordination},
-  author={Hu, Hengyuan and Sadigh, Dorsa},
-  booktitle={International Conference on Machine Learning},
-  pages={13584--13598},
-  year={2023},
-  organization={PMLR}
-}
-
-@article{wu2024enhance,
-  title={Enhance reasoning for large language models in the game werewolf},
-  author={Wu, Shuang and Zhu, Liwen and Yang, Tao and Xu, Shiwei and Fu, Qiang and Wei, Yang and Fu, Haobo},
-  journal={arXiv preprint arXiv:2402.02330},
-  year={2024}
-}
-
-@article{xu2023language,
-  title={Language agents with reinforcement learning for strategic play in the werewolf game},
-  author={Xu, Zelai and Yu, Chao and Fang, Fei and Wang, Yu and Wu, Yi},
-  journal={arXiv preprint arXiv:2310.18940},
-  year={2023}
-}
-
-@article{liu2023llm,
-  title={Llm-powered hierarchical language agent for real-time human-ai coordination},
-  author={Liu, Jijia and Yu, Chao and Gao, Jiaxuan and Xie, Yuqing and Liao, Qingmin and Wu, Yi and Wang, Yu},
-  journal={arXiv preprint arXiv:2312.15224},
-  year={2023}
-}
-
-@inproceedings{zhang2024proagent,
-  title={Proagent: building proactive cooperative agents with large language models},
-  author={Zhang, Ceyao and Yang, Kaijie and Hu, Siyi and Wang, Zihao and Li, Guanghe and Sun, Yihang and Zhang, Cheng and Zhang, Zhaowei and Liu, Anji and Zhu, Song-Chun and others},
-  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
-  volume={38},
-  number={16},
-  pages={17591--17599},
-  year={2024}
-}
-
-@inproceedings{zhang2025implicit,
-  title={Implicit Communication of Contextual Information in Human-Robot Collaboration},
-  author={Zhang, Yan},
-  booktitle={2025 20th ACM/IEEE International Conference on Human-Robot Interaction (HRI)},
-  pages={1903--1905},
-  year={2025},
-  organization={IEEE}
-}
-
-@inproceedings{vrins2024wizard,
-  title={Wizard-of-Oz vs. GPT-4: a comparative study of perceived social intelligence in HRI brainstorming},
-  author={Vrins, Anita and Pruss, Ethel and Ceccato, Caterina and Prinsen, Jos and De Rooij, Alwin and Alimardani, Maryam and De Wit, Jan},
-  booktitle={Companion of the 2024 ACM/IEEE International Conference on Human-Robot Interaction},
-  pages={1090--1094},
-  year={2024}
-}
-
-@inproceedings{mahadevan2024generative,
-  title={Generative expressive robot behaviors using large language models},
-  author={Mahadevan, Karthik and Chien, Jonathan and Brown, Noah and Xu, Zhuo and Parada, Carolina and Xia, Fei and Zeng, Andy and Takayama, Leila and Sadigh, Dorsa},
-  booktitle={Proceedings of the 2024 ACM/IEEE International Conference on Human-Robot Interaction},
-  pages={482--491},
-  year={2024}
-}
-
-@inproceedings{verhelst2024adaptive,
-  title={Adaptive second language tutoring using generative ai and a social robot},
-  author={Verhelst, Eva and Janssens, Ruben and Demeester, Thomas and Belpaeme, Tony},
-  booktitle={Companion of the 2024 ACM/IEEE International Conference on Human-Robot Interaction},
-  pages={1080--1084},
-  year={2024}
-}
-
-@inproceedings{lin2024toward,
-  title={Toward personalized tour-guide robot: Adaptive content planner based on visitor's engagement},
-  author={Lin, Yanran and Jo, Wonse and Ali, Arsha and Robert Jr, Lionel P and Tilbury, Dawn M},
-  booktitle={Companion of the 2024 ACM/IEEE International Conference on Human-Robot Interaction},
-  pages={674--678},
-  year={2024}
-}
-
-@inproceedings{kontogiorgos2025questioning,
-  title={Questioning the Robot: Using Human Non-verbal Cues to Estimate the Need for Explanations},
-  author={Kontogiorgos, Dimosthenis and Shah, Julie},
-  booktitle={2025 20th ACM/IEEE International Conference on Human-Robot Interaction (HRI)},
-  pages={717--728},
-  year={2025},
-  organization={IEEE}
-}
-
-@inproceedings{kamelabad2025comparing,
-  title={Comparing Monolingual and Bilingual Social Robots as Conversational Practice Companions in Language Learning},
-  author={Kamelabad, Alireza M and Inoue, Elin and Skantze, Gabriel},
-  booktitle={2025 20th ACM/IEEE International Conference on Human-Robot Interaction (HRI)},
-  pages={829--838},
-  year={2025},
-  organization={IEEE}
-}
-
-@inproceedings{ashok2025thanks,
-  title={“Thanks for the Practice!”: LLM-Powered Social Robot as Tandem Language Partner at University},
-  author={Ashok, Ashita and Bruno, Barbara and Helf, Tamara and Berns, Karsten},
-  booktitle={2025 20th ACM/IEEE International Conference on Human-Robot Interaction (HRI)},
-  pages={1221--1226},
-  year={2025},
-  organization={IEEE}
-}
-
-@inproceedings{xie2025embodied,
-  title={Embodied Generative AI Art for Enhanced Human-Robot Interaction Through a Human-Centric LLM-Guided Robotic Arm Drawing System},
-  author={Xie, Shengyuan and Sandoval, Eduardo Benitez and Shaik, Khaja Ahmed and Cruz, Francisco},
-  booktitle={2025 20th ACM/IEEE International Conference on Human-Robot Interaction (HRI)},
-  pages={1727--1730},
-  year={2025},
-  organization={IEEE}
-}
-
-@inproceedings{liu2025signpepper,
-  title={SignPepper: Multimodal Social Robot for Sign Language Teaching},
-  author={Liu, Edmond and Lim, Jong Yoon and Johnson, Vineeth and MacDonald, Bruce and Ahn, Ho Seok},
-  booktitle={2025 20th ACM/IEEE International Conference on Human-Robot Interaction (HRI)},
-  pages={1791--1793},
-  year={2025},
-  organization={IEEE}
-}
-
-@inproceedings{verhelst2025large,
-  title={Large language models cover for speech recognition mistakes: Evaluating conversational ai for second language learners},
-  author={Verhelst, Eva and Belpaeme, Tony},
-  booktitle={2025 20th ACM/IEEE International Conference on Human-Robot Interaction (HRI)},
-  pages={1705--1709},
-  year={2025},
-  organization={IEEE}
-}
-
-@inproceedings{wang2024ain,
-  title={Ain't Misbehavin'-Using LLMs to Generate Expressive Robot Behavior in Conversations with the Tabletop Robot Haru},
-  author={Wang, Zining and Reisert, Paul and Nichols, Eric and Gomez, Randy},
-  booktitle={Companion of the 2024 ACM/IEEE international conference on human-robot interaction},
-  pages={1105--1109},
-  year={2024}
-}
-
-@inproceedings{nichols2021collaborative,
-  title={Collaborative storytelling with social robots},
-  author={Nichols, Eric and Gao, Leo and Vasylkiv, Yurii and Gomez, Randy},
-  booktitle={2021 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
-  pages={1903--1910},
-  year={2021},
-  organization={IEEE}
-}
-
-@article{qian2024scaling,
-  title={Scaling large language model-based multi-agent collaboration},
-  author={Qian, Chen and Xie, Zihao and Wang, Yifei and Liu, Wei and Zhu, Kunlun and Xia, Hanchen and Dang, Yufan and Du, Zhuoyun and Chen, Weize and Yang, Cheng and others},
-  journal={arXiv preprint arXiv:2406.07155},
-  year={2024}
-}
-
-@article{brown2020language,
-  title={Language models are few-shot learners},
-  author={Brown, Tom and Mann, Benjamin and Ryder, Nick and Subbiah, Melanie and Kaplan, Jared D and Dhariwal, Prafulla and Neelakantan, Arvind and Shyam, Pranav and Sastry, Girish and Askell, Amanda and others},
-  journal={Advances in neural information processing systems},
-  volume={33},
-  pages={1877--1901},
-  year={2020}
-}
-
-@inproceedings{radford2021learning,
-  title={Learning transferable visual models from natural language supervision},
-  author={Radford, Alec and Kim, Jong Wook and Hallacy, Chris and Ramesh, Aditya and Goh, Gabriel and Agarwal, Sandhini and Sastry, Girish and Askell, Amanda and Mishkin, Pamela and Clark, Jack and others},
-  booktitle={International conference on machine learning},
-  pages={8748--8763},
-  year={2021},
-  organization={PmLR}
-}
-
-@article{belpaeme2018guidelines,
-  title={Guidelines for designing social robots as second language tutors},
-  author={Belpaeme, Tony and Vogt, Paul and Van den Berghe, Rianne and Bergmann, Kirsten and G{\"o}ksun, Tilbe and De Haas, Mirjam and Kanero, Junko and Kennedy, James and K{\"u}ntay, Aylin C and Oudgenoeg-Paz, Ora and others},
-  journal={International Journal of Social Robotics},
-  volume={10},
-  number={3},
-  pages={325--341},
-  year={2018},
-  publisher={Springer}
-}
-@article{kyrarini2021survey,
-  title={A survey of robots in healthcare},
-  author={Kyrarini, Maria and Lygerakis, Fotios and Rajavenkatanarayanan, Akilesh and Sevastopoulos, Christos and Nambiappan, Harish Ram and Chaitanya, Kodur Krishna and Babu, Ashwin Ramesh and Mathew, Joanne and Makedon, Fillia},
-  journal={Technologies},
-  volume={9},
-  number={1},
-  pages={8},
-  year={2021},
-  publisher={MDPI}
-}
-
-@article{dautenhahn2007socially,
-  title={Socially intelligent robots: dimensions of human--robot interaction},
-  author={Dautenhahn, Kerstin},
-  journal={Philosophical transactions of the royal society B: Biological sciences},
-  volume={362},
-  number={1480},
-  pages={679--704},
-  year={2007},
-  publisher={The Royal Society London}
-}
-
-@inproceedings{leite2025call,
-  title={A Call for Deeper Collaboration Between Robotics and Game Development},
-  author={Leite, Iolanda and Ahlberg, William and Pereira, Andr{\'e} and Sestini, Alessandro and Gissl{\'e}n, Linus and Tollmar, Konrad},
-  booktitle={2025 IEEE Conference on Games (CoG)},
-  pages={1--8},
-  year={2025},
-  organization={IEEE}
-}
-
-@article{breazeal2016social,
-  title={Social robotics},
-  author={Breazeal, Cynthia and Dautenhahn, Kerstin and Kanda, Takayuki},
-  journal={Springer handbook of robotics},
-  pages={1935--1972},
-  year={2016},
-  publisher={Springer}
+  title     = {Turn-taking in conversational systems and human-robot interaction: a review},
+  author    = {Skantze, Gabriel},
+  journal   = {Computer Speech \& Language},
+  volume    = {67},
+  pages     = {101178},
+  year      = {2021},
+  publisher = {Elsevier}
+}
+@inproceedings{ekstedt2022vap,
+  title     = {Voice Activity Projection: Self-supervised Learning of Turn-taking Events},
+  author    = {Ekstedt, Erik and Skantze, Gabriel},
+  booktitle = {Proceedings of Interspeech},
+  year      = {2022}
+}
+@article{defossez2024moshi,
+  title   = {Moshi: a speech-text foundation model for real-time dialogue},
+  author  = {D{\'e}fossez, Alexandre and Mazar{\'e}, Laurent and Orsini, Manu and Royer, Am{\'e}lie and P{\'e}rez, Patrick and J{\'e}gou, Herv{\'e} and Grave, Edouard and Zeghidour, Neil},
+  journal = {arXiv preprint arXiv:2410.00037},
+  year    = {2024}
+}
+@misc{nvidia2026voicechat,
+  author       = {{NVIDIA}},
+  title        = {{NemotronLabs VoiceChat}: an 11{B} full-duplex speech model with tool calling},
+  howpublished = {\url{https://huggingface.co/nvidia/NVIDIA-NemotronLabs-VoiceChat-11B}},
+  year         = {2026}
+}
+@article{lee2026recipe,
+  title   = {A Modern System Recipe for Situated Embodied Human--Robot Conversation with Real-Time Multimodal {LLMs} and Tool-Calling},
+  author  = {Lee, Dong Won and Gillet, Sarah and Morency, Louis-Philippe and Breazeal, Cynthia and Park, Hae Won},
+  journal = {arXiv preprint arXiv:2602.04157},
+  year    = {2026}
+}
+@article{jiang2026moshiface,
+  title   = {Integrating Facial Generation into Full-Duplex Spoken Dialogue Systems},
+  author  = {Jiang, Jingjing and Ohashi, Atsumoto and Higashinaka, Ryuichiro},
+  journal = {arXiv preprint arXiv:2606.21970},
+  year    = {2026}
+}
+@inproceedings{mentzer2024fsq,
+  title     = {Finite Scalar Quantization: {VQ-VAE} Made Simple},
+  author    = {Mentzer, Fabian and Minnen, David and Agustsson, Eirikur and Tschannen, Michael},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2024}
 }
 @incollection{al2012furhat,
-  title={Furhat: a back-projected human-like robot head for multiparty human-machine interaction},
-  author={Al Moubayed, Samer and Beskow, Jonas and Skantze, Gabriel and Granstr{\"o}m, Bj{\"o}rn},
-  booktitle={Cognitive behavioural systems: COST 2102 international training school, dresden, Germany, february 21-26, 2011, revised selected papers},
-  pages={114--130},
-  year={2012},
-  publisher={Springer}
+  title     = {Furhat: a back-projected human-like robot head for multiparty human-machine interaction},
+  author    = {Al Moubayed, Samer and Beskow, Jonas and Skantze, Gabriel and Granstr{\"o}m, Bj{\"o}rn},
+  booktitle = {Cognitive Behavioural Systems},
+  pages     = {114--130},
+  year      = {2012},
+  publisher = {Springer}
 }
 
-@article{liu2023lost,
-  title={Lost in the middle: How language models use long contexts},
-  author={Liu, Nelson F and Lin, Kevin and Hewitt, John and Paranjape, Ashwin and Bevilacqua, Michele and Petroni, Fabio and Liang, Percy},
-  journal={arXiv preprint arXiv:2307.03172},
-  year={2023}
+% ---------------------------------------------------------------------------
+% Steering and adaptation of language models
+% ---------------------------------------------------------------------------
+@inproceedings{lester2021prompt,
+  title     = {The Power of Scale for Parameter-Efficient Prompt Tuning},
+  author    = {Lester, Brian and Al-Rfou, Rami and Constant, Noah},
+  booktitle = {Proceedings of EMNLP},
+  year      = {2021}
 }
-@inproceedings{torre2021voice,
-  title={Voice, embodiment, and autonomy as identity affordances},
-  author={Torre, Ilaria and Dogan, Fethiye Irmak and Kontogiorgos, Dimosthenis},
-  booktitle={HRI 2021-Robo-Identity: Exploring Artificial Identity and Multi-Embodiment March 2021},
-  year={2021}
+@inproceedings{li2021prefix,
+  title     = {Prefix-Tuning: Optimizing Continuous Prompts for Generation},
+  author    = {Li, Xiang Lisa and Liang, Percy},
+  booktitle = {Proceedings of ACL-IJCNLP},
+  year      = {2021}
 }
-
-@article{cumbal2023stereotypical,
-  title={Stereotypical nationality representations in HRI: perspectives from international young adults},
-  author={Cumbal, Ronald and Axelsson, Agnes and Mehta, Shivam and Engwall, Olov},
-  journal={Frontiers in Robotics and AI},
-  volume={10},
-  pages={1264614},
-  year={2023},
-  publisher={Frontiers Media SA}
+@inproceedings{houlsby2019adapters,
+  title     = {Parameter-Efficient Transfer Learning for {NLP}},
+  author    = {Houlsby, Neil and Giurgiu, Andrei and Jastrzebski, Stanislaw and Morrone, Bruna and De Laroussilhe, Quentin and Gesmundo, Andrea and Attariyan, Mona and Gelly, Sylvain},
+  booktitle = {Proceedings of ICML},
+  year      = {2019}
 }
-
-@misc{amazonEchoListening,
-  author       = {Amazon},
-  title        = {What Do the Lights on Your Echo Speaker Mean?},
-  howpublished = {\url{https://www.amazon.com/gp/help/customer/display.html?nodeId=GKLDRFT7FP4FZE56}},
-  note         = {Solid blue with a cyan spotlight indicates Alexa is listening},
-  year         = {n.d.},
-  urldate      = {2025-09-26}
+@inproceedings{hu2022lora,
+  title     = {{LoRA}: Low-Rank Adaptation of Large Language Models},
+  author    = {Hu, Edward J. and Shen, Yelong and Wallis, Phillip and Allen-Zhu, Zeyuan and Li, Yuanzhi and Wang, Shean and Wang, Lu and Chen, Weizhu},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2022}
 }
-
-@misc{boseSmartSpeakerListening,
-  author       = {Bose Support},
-  title        = {Understanding LED indicator status lights and information},
-  howpublished = {\url{https://support.bose.com/s/article/ssb900-soundbar-understanding-led-indicator-status-lights-and-information---ka08c000001buhsaaa}},
-  note         = {Voice assistant is listening when the light bar slides to center and \emph{glows solid}},
-  year         = {n.d.},
-  urldate      = {2025-09-26}
+@article{turner2023actadd,
+  title   = {Steering Language Models With Activation Engineering},
+  author  = {Turner, Alexander Matt and Thiergart, Lisa and Leech, Gavin and Udell, David and Vazquez, Juan J. and Mini, Ulisse and MacDiarmid, Monte},
+  journal = {arXiv preprint arXiv:2308.10248},
+  year    = {2023}
 }
-@inproceedings{axelsson2023you,
-  title={Do you follow? a fully automated system for adaptive robot presenters},
-  author={Axelsson, Agnes and Skantze, Gabriel},
-  booktitle={Proceedings of the 2023 acm/ieee international conference on human-robot interaction},
-  pages={102--111},
-  year={2023}
+@inproceedings{rimsky2024caa,
+  title     = {Steering {Llama} 2 via Contrastive Activation Addition},
+  author    = {Rimsky, Nina and Gabrieli, Nick and Schulz, Julian and Tong, Meg and Hubinger, Evan and Turner, Alexander Matt},
+  booktitle = {Proceedings of ACL},
+  year      = {2024}
 }
-
-@inproceedings{fu2023robot,
-  title={The robot in the room: influence of robot facial expressions and gaze on human-human-robot collaboration},
-  author={Fu, Di and Abawi, Fares and Wermter, Stefan},
-  booktitle={2023 32nd IEEE International Conference on Robot and Human Interactive Communication (RO-MAN)},
-  pages={85--91},
-  year={2023},
-  organization={IEEE}
+@article{zou2023repe,
+  title   = {Representation Engineering: A Top-Down Approach to {AI} Transparency},
+  author  = {Zou, Andy and Phan, Long and Chen, Sarah and Campbell, James and Guo, Phillip and Ren, Richard and Pan, Alexander and Yin, Xuwang and Mazeika, Mantas and Dombrowski, Ann-Kathrin and others},
+  journal = {arXiv preprint arXiv:2310.01405},
+  year    = {2023}
 }
-
-@article{reyes2019robotics,
-  title={Robotics facial expression of anger in collaborative human--robot interaction},
-  author={Reyes, Mauricio E and Meza, Ivan V and Pineda, Luis A},
-  journal={International Journal of Advanced Robotic Systems},
-  volume={16},
-  number={1},
-  pages={1729881418817972},
-  year={2019},
-  publisher={SAGE Publications Sage UK: London, England}
+@inproceedings{li2023iti,
+  title     = {Inference-Time Intervention: Eliciting Truthful Answers from a Language Model},
+  author    = {Li, Kenneth and Patel, Oam and Vi{\'e}gas, Fernanda and Pfister, Hanspeter and Wattenberg, Martin},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  year      = {2023}
 }
-
-@misc{openai2025gpt41,
-  author       = {OpenAI},
-  title        = {GPT-4.1 Model Card},
-  year         = {2025},
-  howpublished = {\url{https://platform.openai.com/docs/models/gpt-4.1}},
-  note         = {Accessed: 2025-09-30}
+@inproceedings{dathathri2020pplm,
+  title     = {Plug and Play Language Models: A Simple Approach to Controlled Text Generation},
+  author    = {Dathathri, Sumanth and Madotto, Andrea and Lan, Janice and Hung, Jane and Frank, Eric and Molino, Piero and Yosinski, Jason and Liu, Rosanne},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2020}
 }
-
-@article{team2025gemma,
-  title={Gemma 3 technical report},
-  author={Team, Gemma and Kamath, Aishwarya and Ferret, Johan and Pathak, Shreya and Vieillard, Nino and Merhej, Ramona and Perrin, Sarah and Matejovicova, Tatiana and Ram{\'e}, Alexandre and Rivi{\`e}re, Morgane and others},
-  journal={arXiv preprint arXiv:2503.19786},
-  year={2025}
+@inproceedings{yang2021fudge,
+  title     = {{FUDGE}: Controlled Text Generation With Future Discriminators},
+  author    = {Yang, Kevin and Klein, Dan},
+  booktitle = {Proceedings of NAACL},
+  year      = {2021}
 }
-
-@misc{vad,
-  author = {Silero Team},
-  title = {Silero VAD: pre-trained enterprise-grade Voice Activity Detector (VAD), Number Detector and Language Classifier},
-  year = {2024},
-  publisher = {GitHub},
-  journal = {GitHub repository},
-  howpublished = {\url{https://github.com/snakers4/silero-vad}},
-  commit = {insert_some_commit_here},
-  email = {hello@silero.ai}
+@inproceedings{krause2021gedi,
+  title     = {{GeDi}: Generative Discriminator Guided Sequence Generation},
+  author    = {Krause, Ben and Gotmare, Akhilesh Deepak and McCann, Bryan and Keskar, Nitish Shirish and Joty, Shafiq and Socher, Richard and Rajani, Nazneen Fatema},
+  booktitle = {Findings of EMNLP},
+  year      = {2021}
 }
-@misc{macoron_whisper_unity,
-  author       = {Macoron},
-  title        = {whisper.unity: Unity bindings for whisper.cpp (includes WhisperManager)},
-  year         = {2025},
-  howpublished = {\url{https://github.com/Macoron/whisper.unity}},
-  note         = {Version 1.4.0 (Vulkan); accessed 2025-10-01},
+@inproceedings{ouyang2022rlhf,
+  title     = {Training language models to follow instructions with human feedback},
+  author    = {Ouyang, Long and Wu, Jeffrey and Jiang, Xu and Almeida, Diogo and Wainwright, Carroll and Mishkin, Pamela and Zhang, Chong and Agarwal, Sandhini and Slama, Katarina and Ray, Alex and others},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  year      = {2022}
 }
-@misc{ggerganov_ggml_tiny_q8_0,
-  author       = {Georgi Gerganov},
-  title        = {OpenAI Whisper models (GGML) for whisper.cpp: \texttt{ggml-tiny-q8\_0.bin}},
-  year         = {2024},
-  howpublished = {\url{https://huggingface.co/ggerganov/whisper.cpp/tree/0b364b566045a405be7225ee1e415a073e04da77}},
-  note         = {File: \texttt{ggml-tiny-q8\_0.bin}; commit 0b364b5; accessed 2025-10-01},
-}
-@inproceedings{radford2023whisper,
-  title     = {Robust Speech Recognition via Large-Scale Weak Supervision},
-  author    = {Radford, Alec and Kim, Jong Wook and Xu, Tao and Brockman, Greg and McLeavey, Christine and Sutskever, Ilya},
-  booktitle = {Proceedings of the 40th International Conference on Machine Learning},
-  series    = {PMLR},
-  volume    = {202},
-  pages     = {28492--28518},
-  year      = {2023},
-  url       = {https://proceedings.mlr.press/v202/radford23a.html}
-}
-@misc{ggml_whispercpp,
-  author       = {GGML Org and contributors},
-  title        = {whisper.cpp: High-performance C/C++ inference of OpenAI's Whisper},
-  year         = {2025},
-  howpublished = {\url{https://github.com/ggml-org/whisper.cpp}},
-  note         = {Stable v1.7.x; accessed 2025-10-01},
-}
-
-@inproceedings{wang2024lami,
-  title={Lami: Large language models for multi-modal human-robot interaction},
-  author={Wang, Chao and Hasler, Stephan and Tanneberg, Daniel and Ocker, Felix and Joublin, Frank and Ceravola, Antonello and Deigmoeller, Joerg and Gienger, Michael},
-  booktitle={Extended Abstracts of the CHI Conference on Human Factors in Computing Systems},
-  pages={1--10},
-  year={2024}
-}
-
-@article{larson2019evaluation,
-  title={An evaluation dataset for intent classification and out-of-scope prediction},
-  author={Larson, Stefan and Mahendran, Anish and Peper, Joseph J and Clarke, Christopher and Lee, Andrew and Hill, Parker and Kummerfeld, Jonathan K and Leach, Kevin and Laurenzano, Michael A and Tang, Lingjia and others},
-  journal={arXiv preprint arXiv:1909.02027},
-  year={2019}
-}
-
-@article{casanueva2020efficient,
-  title={Efficient intent detection with dual sentence encoders},
-  author={Casanueva, I{\~n}igo and Tem{\v{c}}inas, Tadas and Gerz, Daniela and Henderson, Matthew and Vuli{\'c}, Ivan},
-  journal={arXiv preprint arXiv:2003.04807},
-  year={2020}
-}
-@article{mahmood2025user,
-  title={User interaction patterns and breakdowns in conversing with llm-powered voice assistants},
-  author={Mahmood, Amama and Wang, Junxiang and Yao, Bingsheng and Wang, Dakuo and Huang, Chien-Ming},
-  journal={International Journal of Human-Computer Studies},
-  volume={195},
-  pages={103406},
-  year={2025},
-  publisher={Elsevier}
-}
-@article{arakawa2024prism,
-  title={Prism-q\&a: Step-aware voice assistant on a smartwatch enabled by multimodal procedure tracking and large language models},
-  author={Arakawa, Riku and Lehman, Jill Fain and Goel, Mayank},
-  journal={Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies},
-  volume={8},
-  number={4},
-  pages={1--26},
-  year={2024},
-  publisher={ACM New York, NY, USA}
-}
-@misc{obs,
-  author = {{OBS Project}},
-  title = {{OBS Studio} (Version 31.1)},
-  year = {2025},
-  url = {https://obsproject.com},
-  note = {Computer software}
+@inproceedings{rafailov2023dpo,
+  title     = {Direct Preference Optimization: Your Language Model is Secretly a Reward Model},
+  author    = {Rafailov, Rafael and Sharma, Archit and Mitchell, Eric and Manning, Christopher D. and Ermon, Stefano and Finn, Chelsea},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  year      = {2023}
 }
