@@ -1,0 +1,51 @@
+% PandemicAI: HRI 2027 Short Contributions (Code).
+% Anonymous review version; author notes and camera-ready funding text are separate.
+\documentclass[sigconf,review,anonymous,nonacm]{acmart}
+\setcopyright{none}
+\settopmatter{printacmref=false}
+\acmConference[HRI '27]{ACM/IEEE International Conference on Human-Robot Interaction}{2027}{}
+\usepackage{array}
+% Compact bullet item for table cells (hanging indent, no extra spacing).
+\newcommand{\ti}{\par\noindent\hangindent=0.7em\hangafter=1\makebox[0.7em][l]{\textbullet}}
+\newcommand{\platform}{\textit{PandemicAI}}
+\newcommand{\reviewrepository}{https://anonymous.4open.science/r/pandemicSubmission-230B}
+
+\begin{document}
+\raggedbottom
+\title{Steering When, Where, and Whether Robots Should Speak}
+\subtitle{Data-Efficient Adapters for Full-Duplex Human--Robot Collaboration}
+
+\begin{abstract}
+Collaborative board games provide socially rich, rule-based environments with measurable outcomes, making them valuable testbeds for studying embodied human--agent collaboration. We present \platform{}, an open-source platform connecting a digital game interface, a game engine with an inspectable planner, a robot platform, and a dialog manager with two reference implementations using large language models (LLMs). Through dialog, the user can change the robot's plan, which the robot then carries out through coordinated speech, gaze, facial behaviour, and actions on the shared digital board. A pilot in which ten participants completed twenty games demonstrates end-to-end operation. Additional data collection and virtual reality (VR) adaptations of the scenario illustrate its reuse for interaction and social-perception research, offering a route to prototyping agents before physical deployment. We release the game interface, game engine, robot platform, and dialog manager to support reproducible research on decision making and communication in collaborative human--robot interaction.
+
+%We commit to maintaining a versioned core and documented research branches as a reusable experimental foundation for studying decision making, multimodal communication, and human--robot collaboration.
+
+\end{abstract}
+
+\begin{CCSXML}
+<ccs2012>
+ <concept><concept_id>10003120.10003121</concept_id><concept_desc>Human-centered computing~Human computer interaction (HCI)</concept_desc><concept_significance>500</concept_significance></concept>
+ <concept><concept_id>10003120.10003121.10003124.10010870</concept_id><concept_desc>Human-centered computing~Natural language interfaces</concept_desc><concept_significance>300</concept_significance></concept>
+</ccs2012>
+\end{CCSXML}
+\ccsdesc[500]{Human-centered computing~Human computer interaction (HCI)}
+\ccsdesc[300]{Human-centered computing~Natural language interfaces}
+\keywords{Human--robot collaboration, cooperative games, open-source software, large language models, multimodal interaction}
+
+\begin{teaserfigure}
+ \centering
+ \includegraphics[width=.80\textwidth]{figures/platform.png}
+ \caption{A user and a Furhat teammate share a digital Pandemic board. The game engine supplies state and plans to the dialog manager; tagged speech coordinates robot behaviour with visible game actions. The robot moves digital pieces through the game interface.}
+ \Description{A participant sits at a digital tabletop opposite a Furhat robot. An overlaid architecture connects the interface to the game engine, speech recognition, and dialog manager, which sends text with multimodal tags to the robot.}
+ \label{fig:platform}
+\end{teaserfigure}
+\maketitle
+
+
+
+% Camera-ready funding text and public repository are in the separate author notes.
+\clearpage
+\balance
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{references}
+\end{document}
