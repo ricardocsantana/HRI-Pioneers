@@ -1,7 +1,20 @@
+% ===========================================================================
+% references.bib -- grouped to follow the paper:
+%   0. Own prior work (anonymised)
+%   1. Framing: teammates, turn-taking review
+%   2. Where: gaze, full-duplex models, task-grounded agents (Stage 1)
+%   3. When: turn-taking prediction (Stage 2a)
+%   4. Whether: partner signals, RLHF, privileged information, steering (Stage 2b)
+%   5. Infrastructure: robot, quantisation
+%   6. Reserve: not cited in the current draft (dropped from the PDF by BibTeX)
+% Keys: firstauthorYEARshortname. Within a group, entries are ordered by year.
+% ===========================================================================
+
+
 % ---------------------------------------------------------------------------
-% Own prior work, anonymised as the HRI Pioneers call requires:
-% "anonymize the work in the reference section" (title and authors omitted).
-% De-anonymise for camera-ready.
+% 0. Own prior work, anonymised as the HRI Pioneers call requires:
+%    "anonymize the work in the reference section" (title and authors omitted).
+%    De-anonymise for camera-ready.
 % ---------------------------------------------------------------------------
 @inproceedings{anon2025joy,
   author    = {{Anonymous}},
@@ -21,22 +34,41 @@
   note   = {Under review},
   year   = {2026}
 }
-@misc{anon2026brainhri,
-  author = {{Anonymous}},
-  title  = {Title and authors omitted for anonymous review},
-  note   = {Under review},
-  year   = {2026}
-}
 @misc{anon2026brainconv,
   author = {{Anonymous}},
   title  = {Title and authors omitted for anonymous review},
   note   = {Under review},
   year   = {2026}
 }
+@misc{anon2026brainhri,
+  author = {{Anonymous}},
+  title  = {Title and authors omitted for anonymous review},
+  note   = {Under review},
+  year   = {2026}
+}
+% CHECK: anon2026fmri (cited in Background) may be the same paper as
+% anon2026brainconv; if so, replace the key in main.tex and delete this entry.
+@misc{anon2026fmri,
+  author = {{Anonymous}},
+  title  = {Title and authors omitted for anonymous review},
+  note   = {Under review},
+  year   = {2026}
+}
+
 
 % ---------------------------------------------------------------------------
-% Turn-taking, full-duplex and embodied conversation
+% 1. Framing
 % ---------------------------------------------------------------------------
+@article{akata2020research,
+  title     = {A Research Agenda for Hybrid Intelligence: Augmenting Human Intellect With Collaborative, Adaptive, Responsible, and Explainable Artificial Intelligence},
+  author    = {Akata, Zeynep and Balliet, Dan and De Rijke, Maarten and Dignum, Frank and Dignum, Virginia and Eiben, Guszti and Fokkens, Antske and Grossi, Davide and Hindriks, Koen and Hoos, Holger and others},
+  journal   = {Computer},
+  volume    = {53},
+  number    = {8},
+  pages     = {18--28},
+  year      = {2020},
+  publisher = {IEEE}
+}
 @article{skantze2021turn,
   title     = {Turn-taking in conversational systems and human-robot interaction: a review},
   author    = {Skantze, Gabriel},
@@ -46,32 +78,67 @@
   year      = {2021},
   publisher = {Elsevier}
 }
-@inproceedings{ekstedt2022vap,
-  title     = {Voice Activity Projection: Self-supervised Learning of Turn-taking Events},
-  author    = {Ekstedt, Erik and Skantze, Gabriel},
-  booktitle = {Proceedings of Interspeech},
-  year      = {2022}
+
+
+% ---------------------------------------------------------------------------
+% 2. Where: gaze, full-duplex models, task-grounded agents (Stage 1)
+% ---------------------------------------------------------------------------
+% -- Gaze in HRI and conversation
+@article{admoni2017social,
+  title     = {Social Eye Gaze in Human-Robot Interaction: A Review},
+  author    = {Admoni, Henny and Scassellati, Brian},
+  journal   = {Journal of Human-Robot Interaction},
+  volume    = {6},
+  number    = {1},
+  pages     = {25--63},
+  year      = {2017}
 }
+@inproceedings{pereira2019responsive,
+  title     = {Responsive Joint Attention in Human-Robot Interaction},
+  author    = {Pereira, Andre and Oertel, Catharine and Fermoselle, Leonor and Mendelson, Joe and Gustafson, Joakim},
+  booktitle = {Proceedings of the IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
+  pages     = {1080--1087},
+  year      = {2019},
+  publisher = {IEEE}
+}
+@article{agrawal2025seamless,
+  title   = {Seamless Interaction: Dyadic Audiovisual Motion Modeling and Large-Scale Dataset},
+  author  = {Agrawal, Vasu and Akinyemi, Akinniyi and Alvero, Kathryn and Behrooz, Morteza and Buffalini, Julia and Carlucci, Fabio Maria and Chen, Joy and Chen, Junming and Chen, Zhang and Cheng, Shiyang and others},
+  journal = {arXiv preprint arXiv:2506.22554},
+  year    = {2025}
+}
+@article{lee2026recipe,
+  title   = {A Modern System Recipe for Situated Embodied Human--Robot Conversation with Real-Time Multimodal {LLMs} and Tool-Calling},
+  author  = {Lee, Dong Won and Gillet, Sarah and Morency, Louis-Philippe and Breazeal, Cynthia and Park, Hae Won},
+  journal = {arXiv preprint arXiv:2602.04157},
+  year    = {2026}
+}
+
+% -- Full-duplex spoken language models and their extra channels
 @article{defossez2024moshi,
   title   = {Moshi: a speech-text foundation model for real-time dialogue},
   author  = {D{\'e}fossez, Alexandre and Mazar{\'e}, Laurent and Orsini, Manu and Royer, Am{\'e}lie and P{\'e}rez, Patrick and J{\'e}gou, Herv{\'e} and Grave, Edouard and Zeghidour, Neil},
   journal = {arXiv preprint arXiv:2410.00037},
   year    = {2024}
 }
-@misc{balam2026nemotronlabsvoicechatopenfullduplex,
-      title={NemotronLabs VoiceChat: An Open Full-duplex Speech-to-Speech Model with Tool Calling Capabilities}, 
-      author={NVIDIA},
-      year={2026},
-      eprint={2609.21967},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2609.21967}, 
+@inproceedings{roy2026personaplex,
+  title     = {{PersonaPlex}: Voice and Role Control for Full Duplex Conversational Speech Models},
+  author    = {Roy, Rajarshi and Raiman, Jonathan and Lee, Sang-gil and Ene, Teodor-Dumitru and Kirby, Robert and Kim, Sungwon and Kim, Jaehyeon and Catanzaro, Bryan},
+  booktitle = {Proceedings of the IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+  pages     = {16137--16141},
+  year      = {2026},
+  publisher = {IEEE}
 }
-
-@article{lee2026recipe,
-  title   = {A Modern System Recipe for Situated Embodied Human--Robot Conversation with Real-Time Multimodal {LLMs} and Tool-Calling},
-  author  = {Lee, Dong Won and Gillet, Sarah and Morency, Louis-Philippe and Breazeal, Cynthia and Park, Hae Won},
-  journal = {arXiv preprint arXiv:2602.04157},
+@article{zhang2026duplexsla,
+  title   = {{DuplexSLA}: A Full-Duplex Spoken Language Model with Synchronized Speech, Language, and Action},
+  author  = {Zhang, Haoyang and Chen, Jun and Wu, Donghang and Li, Yuxin and Zhang, Yuxin and Zhang, Xiangyu Tony and Liu, Che and Lin, Qingjian and Peng, Yizhou and Liu, Hexin and others},
+  journal = {arXiv preprint arXiv:2605.20755},
+  year    = {2026}
+}
+@article{balam2026nemotronvoicechat,
+  title   = {{NemotronLabs VoiceChat}: An Open Full-duplex Speech-to-Speech Model with Tool Calling Capabilities},
+  author  = {{NVIDIA}},
+  journal = {arXiv preprint arXiv:2609.21967},
   year    = {2026}
 }
 @article{jiang2026moshiface,
@@ -80,121 +147,8 @@
   journal = {arXiv preprint arXiv:2606.21970},
   year    = {2026}
 }
-@inproceedings{mentzer2024fsq,
-  title     = {Finite Scalar Quantization: {VQ-VAE} Made Simple},
-  author    = {Mentzer, Fabian and Minnen, David and Agustsson, Eirikur and Tschannen, Michael},
-  booktitle = {International Conference on Learning Representations (ICLR)},
-  year      = {2024}
-}
-@incollection{al2012furhat,
-  title     = {Furhat: a back-projected human-like robot head for multiparty human-machine interaction},
-  author    = {Al Moubayed, Samer and Beskow, Jonas and Skantze, Gabriel and Granstr{\"o}m, Bj{\"o}rn},
-  booktitle = {Cognitive Behavioural Systems},
-  pages     = {114--130},
-  year      = {2012},
-  publisher = {Springer}
-}
 
-% ---------------------------------------------------------------------------
-% Steering and adaptation of language models
-% ---------------------------------------------------------------------------
-@inproceedings{lester2021prompt,
-  title     = {The Power of Scale for Parameter-Efficient Prompt Tuning},
-  author    = {Lester, Brian and Al-Rfou, Rami and Constant, Noah},
-  booktitle = {Proceedings of EMNLP},
-  year      = {2021}
-}
-@inproceedings{li2021prefix,
-  title     = {Prefix-Tuning: Optimizing Continuous Prompts for Generation},
-  author    = {Li, Xiang Lisa and Liang, Percy},
-  booktitle = {Proceedings of ACL-IJCNLP},
-  year      = {2021}
-}
-@inproceedings{houlsby2019adapters,
-  title     = {Parameter-Efficient Transfer Learning for {NLP}},
-  author    = {Houlsby, Neil and Giurgiu, Andrei and Jastrzebski, Stanislaw and Morrone, Bruna and De Laroussilhe, Quentin and Gesmundo, Andrea and Attariyan, Mona and Gelly, Sylvain},
-  booktitle = {Proceedings of ICML},
-  year      = {2019}
-}
-@inproceedings{hu2022lora,
-  title     = {{LoRA}: Low-Rank Adaptation of Large Language Models},
-  author    = {Hu, Edward J. and Shen, Yelong and Wallis, Phillip and Allen-Zhu, Zeyuan and Li, Yuanzhi and Wang, Shean and Wang, Lu and Chen, Weizhu},
-  booktitle = {International Conference on Learning Representations (ICLR)},
-  year      = {2022}
-}
-@article{turner2023actadd,
-  title   = {Steering Language Models With Activation Engineering},
-  author  = {Turner, Alexander Matt and Thiergart, Lisa and Leech, Gavin and Udell, David and Vazquez, Juan J. and Mini, Ulisse and MacDiarmid, Monte},
-  journal = {arXiv preprint arXiv:2308.10248},
-  year    = {2023}
-}
-@inproceedings{rimsky2024caa,
-  title     = {Steering {Llama} 2 via Contrastive Activation Addition},
-  author    = {Rimsky, Nina and Gabrieli, Nick and Schulz, Julian and Tong, Meg and Hubinger, Evan and Turner, Alexander Matt},
-  booktitle = {Proceedings of ACL},
-  year      = {2024}
-}
-@article{zou2023repe,
-  title   = {Representation Engineering: A Top-Down Approach to {AI} Transparency},
-  author  = {Zou, Andy and Phan, Long and Chen, Sarah and Campbell, James and Guo, Phillip and Ren, Richard and Pan, Alexander and Yin, Xuwang and Mazeika, Mantas and Dombrowski, Ann-Kathrin and others},
-  journal = {arXiv preprint arXiv:2310.01405},
-  year    = {2023}
-}
-@inproceedings{li2023iti,
-  title     = {Inference-Time Intervention: Eliciting Truthful Answers from a Language Model},
-  author    = {Li, Kenneth and Patel, Oam and Vi{\'e}gas, Fernanda and Pfister, Hanspeter and Wattenberg, Martin},
-  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
-  year      = {2023}
-}
-@inproceedings{dathathri2020pplm,
-  title     = {Plug and Play Language Models: A Simple Approach to Controlled Text Generation},
-  author    = {Dathathri, Sumanth and Madotto, Andrea and Lan, Janice and Hung, Jane and Frank, Eric and Molino, Piero and Yosinski, Jason and Liu, Rosanne},
-  booktitle = {International Conference on Learning Representations (ICLR)},
-  year      = {2020}
-}
-@inproceedings{yang2021fudge,
-  title     = {{FUDGE}: Controlled Text Generation With Future Discriminators},
-  author    = {Yang, Kevin and Klein, Dan},
-  booktitle = {Proceedings of NAACL},
-  year      = {2021}
-}
-@inproceedings{krause2021gedi,
-  title     = {{GeDi}: Generative Discriminator Guided Sequence Generation},
-  author    = {Krause, Ben and Gotmare, Akhilesh Deepak and McCann, Bryan and Keskar, Nitish Shirish and Joty, Shafiq and Socher, Richard and Rajani, Nazneen Fatema},
-  booktitle = {Findings of EMNLP},
-  year      = {2021}
-}
-@inproceedings{ouyang2022rlhf,
-  title     = {Training language models to follow instructions with human feedback},
-  author    = {Ouyang, Long and Wu, Jeffrey and Jiang, Xu and Almeida, Diogo and Wainwright, Carroll and Mishkin, Pamela and Zhang, Chong and Agarwal, Sandhini and Slama, Katarina and Ray, Alex and others},
-  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
-  year      = {2022}
-}
-@inproceedings{rafailov2023dpo,
-  title     = {Direct Preference Optimization: Your Language Model is Secretly a Reward Model},
-  author    = {Rafailov, Rafael and Sharma, Archit and Mitchell, Eric and Manning, Christopher D. and Ermon, Stefano and Finn, Chelsea},
-  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
-  year      = {2023}
-}
-
-% ---------------------------------------------------------------------------
-% Embodied multimodal models, planning and self-play
-% ---------------------------------------------------------------------------
-@inproceedings{driess2023palme,
-  title     = {{PaLM-E}: An Embodied Multimodal Language Model},
-  author    = {Driess, Danny and Xia, Fei and Sajjadi, Mehdi S. M. and Lynch, Corey and Chowdhery, Aakanksha and Ichter, Brian and Wahid, Ayzaan and Tompson, Jonathan and Vuong, Quan and Yu, Tianhe and others},
-  booktitle = {Proceedings of the International Conference on Machine Learning (ICML)},
-  year      = {2023}
-}
-@article{bakhtin2022cicero,
-  title   = {Human-level play in the game of {Diplomacy} by combining language models with strategic reasoning},
-  author  = {{Meta Fundamental AI Research Diplomacy Team (FAIR)} and Bakhtin, Anton and Brown, Noam and Dinan, Emily and Farina, Gabriele and Flaherty, Colin and Fried, Daniel and Goff, Andrew and Gray, Jonathan and Hu, Hengyuan and others},
-  journal = {Science},
-  volume  = {378},
-  number  = {6624},
-  pages   = {1067--1074},
-  year    = {2022}
-}
+% -- Task-grounded game agents and self-play
 @article{silver2018alphazero,
   title   = {A general reinforcement learning algorithm that masters chess, shogi, and {Go} through self-play},
   author  = {Silver, David and Hubert, Thomas and Schrittwieser, Julian and Antonoglou, Ioannis and Lai, Matthew and Guez, Arthur and Lanctot, Marc and Sifre, Laurent and Kumaran, Dharshan and Graepel, Thore and others},
@@ -210,181 +164,224 @@
   booktitle = {International Conference on Learning Representations (ICLR)},
   year      = {2022}
 }
-
-@article{akata2020research,
-  title={A research agenda for hybrid intelligence: augmenting human intellect with collaborative, adaptive, responsible, and explainable artificial intelligence},
-  author={Akata, Zeynep and Balliet, Dan and De Rijke, Maarten and Dignum, Frank and Dignum, Virginia and Eiben, Guszti and Fokkens, Antske and Grossi, Davide and Hindriks, Koen and Hoos, Holger and others},
-  journal={Computer},
-  volume={53},
-  number={8},
-  pages={18--28},
-  year={2020},
-  publisher={IEEE}
-}
-
-@article{silver2018general,
-  title={A general reinforcement learning algorithm that masters chess, shogi, and Go through self-play},
-  author={Silver, David and Hubert, Thomas and Schrittwieser, Julian and Antonoglou, Ioannis and Lai, Matthew and Guez, Arthur and Lanctot, Marc and Sifre, Laurent and Kumaran, Dharshan and Graepel, Thore and others},
-  journal={Science},
-  volume={362},
-  number={6419},
-  pages={1140--1144},
-  year={2018},
-  publisher={American Association for the Advancement of Science}
-}
-
-@article{agrawal2025seamless,
-  title={Seamless interaction: Dyadic audiovisual motion modeling and large-scale dataset},
-  author={Agrawal, Vasu and Akinyemi, Akinniyi and Alvero, Kathryn and Behrooz, Morteza and Buffalini, Julia and Carlucci, Fabio Maria and Chen, Joy and Chen, Junming and Chen, Zhang and Cheng, Shiyang and others},
-  journal={arXiv preprint arXiv:2506.22554},
-  year={2025}
-}
-
-@inproceedings{ekstedt2020turngpt,
-  title={TurnGPT: a transformer-based language model for predicting turn-taking in spoken dialog},
-  author={Ekstedt, Erik and Skantze, Gabriel},
-  booktitle={Findings of the Association for Computational Linguistics: EMNLP 2020},
-  pages={2981--2990},
-  year={2020}
-}
-
-@article{ekstedt2022voice,
-  title={Voice activity projection: Self-supervised learning of turn-taking events},
-  author={Ekstedt, Erik and Skantze, Gabriel},
-  journal={arXiv preprint arXiv:2205.09812},
-  year={2022}
-}
-
-@inproceedings{skantze2025applying,
-  title={Applying general turn-taking models to conversational human-robot interaction},
-  author={Skantze, Gabriel and Irfan, Bahar},
-  booktitle={2025 20th ACM/IEEE International Conference on Human-Robot Interaction (HRI)},
-  pages={859--868},
-  year={2025},
-  organization={IEEE}
-}
-
-@inproceedings{pereira2019responsive,
-  title={Responsive joint attention in human-robot interaction},
-  author={Pereira, Andre and Oertel, Catharine and Fermoselle, Leonor and Mendelson, Joe and Gustafson, Joakim},
-  booktitle={2019 IEEE/RSJ international conference on intelligent robots and systems (IROS)},
-  pages={1080--1087},
-  year={2019},
-  organization={IEEE}
-}
-
-@article{admoni2017social,
-  title={Social eye gaze in human-robot interaction: a review},
-  author={Admoni, Henny and Scassellati, Brian},
-  journal={Journal of Human-Robot Interaction},
-  volume={6},
-  number={1},
-  pages={25--63},
-  year={2017},
-  publisher={Journal of Human-Robot Interaction Steering Committee}
-}
-
-@article{peng2026full,
-  title={Full-Duplex Speech Models Take the Floor When Asked, Not When Needed},
-  author={Peng, Linkai and Nuchged, Baorian and Fu, Kaiqi and Yao, Yuyang},
-  journal={arXiv preprint arXiv:2609.19596},
-  year={2026}
-}
-
-@inproceedings{roy2026personaplex,
-  title={Personaplex: Voice and role control for full duplex conversational speech models},
-  author={Roy, Rajarshi and Raiman, Jonathan and Lee, Sang-gil and Ene, Teodor-Dumitru and Kirby, Robert and Kim, Sungwon and Kim, Jaehyeon and Catanzaro, Bryan},
-  booktitle={ICASSP 2026-2026 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
-  pages={16137--16141},
-  year={2026},
-  organization={IEEE}
-}
-
-@article{lee2026modern,
-  title={A modern system recipe for situated embodied human-robot conversation with real-time multimodal LLMs and tool-calling},
-  author={Lee, Dong Won and Gillet, Sarah and Morency, Louis-Philippe and Breazeal, Cynthia and Park, Hae Won},
-  journal={arXiv preprint arXiv:2602.04157},
-  year={2026}
-}
-
 @article{kramar2022negotiation,
-  title={Negotiation and honesty in artificial intelligence methods for the board game of Diplomacy},
-  author={Kram{\'a}r, J{\'a}nos and Eccles, Tom and Gemp, Ian and Tacchetti, Andrea and McKee, Kevin R and Malinowski, Mateusz and Graepel, Thore and Bachrach, Yoram},
-  journal={Nature Communications},
-  volume={13},
-  number={1},
-  pages={7214},
-  year={2022},
-  publisher={Nature Publishing Group UK London}
+  title   = {Negotiation and honesty in artificial intelligence methods for the board game of {Diplomacy}},
+  author  = {Kram{\'a}r, J{\'a}nos and Eccles, Tom and Gemp, Ian and Tacchetti, Andrea and McKee, Kevin R. and Malinowski, Mateusz and Graepel, Thore and Bachrach, Yoram},
+  journal = {Nature Communications},
+  volume  = {13},
+  number  = {1},
+  pages   = {7214},
+  year    = {2022}
 }
-
+@article{bakhtin2022cicero,
+  title   = {Human-level play in the game of {Diplomacy} by combining language models with strategic reasoning},
+  author  = {{Meta Fundamental AI Research Diplomacy Team (FAIR)} and Bakhtin, Anton and Brown, Noam and Dinan, Emily and Farina, Gabriele and Flaherty, Colin and Fried, Daniel and Goff, Andrew and Gray, Jonathan and Hu, Hengyuan and others},
+  journal = {Science},
+  volume  = {378},
+  number  = {6624},
+  pages   = {1067--1074},
+  year    = {2022}
+}
 @article{si2026exploring,
-  title={Exploring Collaboration between a language and a non-language agent},
-  author={SI, Harini and Singh, Somesh and Singla, Yaman K and Shah, Rajiv Ratn and Doermann, David and Krishnamurthy, Balaji},
-  journal={arXiv preprint arXiv:2609.00474},
-  year={2026}
+  title   = {Exploring Collaboration between a Language and a Non-Language Agent},
+  author  = {SI, Harini and Singh, Somesh and Singla, Yaman K. and Shah, Rajiv Ratn and Doermann, David and Krishnamurthy, Balaji},
+  journal = {arXiv preprint arXiv:2609.00474},
+  year    = {2026}
 }
 
-@article{chang2026overcoming,
-  title={Overcoming State Inertia in Full-Duplex Spoken Language Models via Activation Steering},
-  author={Chang, Cheng-Kuang and Chang, Kai-Wei and Liu, Alexander H and Glass, James},
-  journal={arXiv preprint arXiv:2606.11386},
-  year={2026}
+
+% ---------------------------------------------------------------------------
+% 3. When: turn-taking prediction (Stage 2a)
+% ---------------------------------------------------------------------------
+@inproceedings{ekstedt2020turngpt,
+  title     = {{TurnGPT}: a Transformer-based Language Model for Predicting Turn-taking in Spoken Dialog},
+  author    = {Ekstedt, Erik and Skantze, Gabriel},
+  booktitle = {Findings of the Association for Computational Linguistics: EMNLP 2020},
+  pages     = {2981--2990},
+  year      = {2020}
+}
+@inproceedings{ekstedt2022vap,
+  title     = {Voice Activity Projection: Self-supervised Learning of Turn-taking Events},
+  author    = {Ekstedt, Erik and Skantze, Gabriel},
+  booktitle = {Proceedings of Interspeech},
+  year      = {2022}
+}
+@inproceedings{skantze2025applying,
+  title     = {Applying General Turn-taking Models to Conversational Human-Robot Interaction},
+  author    = {Skantze, Gabriel and Irfan, Bahar},
+  booktitle = {Proceedings of the ACM/IEEE International Conference on Human-Robot Interaction (HRI)},
+  pages     = {859--868},
+  year      = {2025}
 }
 
-@article{christiano2017deep,
-  title={Deep reinforcement learning from human preferences},
-  author={Christiano, Paul F and Leike, Jan and Brown, Tom and Martic, Miljan and Legg, Shane and Amodei, Dario},
-  journal={Advances in neural information processing systems},
-  volume={30},
-  year={2017}
+
+% ---------------------------------------------------------------------------
+% 4. Whether: partner signals, RLHF, privileged information, steering (Stage 2b)
+% ---------------------------------------------------------------------------
+% -- Why full-duplex models do not decide whether to act
+@article{peng2026full,
+  title   = {Full-Duplex Speech Models Take the Floor When Asked, Not When Needed},
+  author  = {Peng, Linkai and Nuchged, Baorian and Fu, Kaiqi and Yao, Yuyang},
+  journal = {arXiv preprint arXiv:2609.19596},
+  year    = {2026}
 }
 
-@article{ouyang2022training,
-  title={Training language models to follow instructions with human feedback},
-  author={Ouyang, Long and Wu, Jeffrey and Jiang, Xu and Almeida, Diogo and Wainwright, Carroll and Mishkin, Pamela and Zhang, Chong and Agarwal, Sandhini and Slama, Katarina and Ray, Alex and others},
-  journal={Advances in neural information processing systems},
-  volume={35},
-  pages={27730--27744},
-  year={2022}
-}
-
+% -- Predicting partner state from interaction data
 @inproceedings{pereira2024multimodal,
-  title={Multimodal user enjoyment detection in human-robot conversation: The power of large language models},
-  author={Pereira, Andre and Marcinek, Lubos and Miniota, Jura and Thunberg, Sofia and Lagerstedt, Erik and Gustafson, Joakim and Skantze, Gabriel and Irfan, Bahar},
-  booktitle={Proceedings of the 26th international conference on multimodal interaction},
-  pages={469--478},
-  year={2024}
+  title     = {Multimodal User Enjoyment Detection in Human-Robot Conversation: The Power of Large Language Models},
+  author    = {Pereira, Andre and Marcinek, Lubos and Miniota, Jura and Thunberg, Sofia and Lagerstedt, Erik and Gustafson, Joakim and Skantze, Gabriel and Irfan, Bahar},
+  booktitle = {Proceedings of the International Conference on Multimodal Interaction (ICMI)},
+  pages     = {469--478},
+  year      = {2024}
 }
-
-@unpublished{anon2026fmri,
-  author = {Anonymous},
-  title  = {Anonymized for review},
-  note   = {Under review},
-  year   = {2026}
-}
-
-@article{jiang2026integrating,
-  title={Integrating Facial Generation into Full-Duplex Spoken Dialogue Systems},
-  author={Jiang, Jingjing and Ohashi, Atsumoto and Higashinaka, Ryuichiro},
-  journal={arXiv preprint arXiv:2606.21970},
-  year={2026}
-}
-
-@article{zhang2026duplexsla,
-  title={Duplexsla: A full-duplex spoken language model with synchronized speech, language, and action},
-  author={Zhang, Haoyang and Chen, Jun and Wu, Donghang and Li, Yuxin and Zhang, Yuxin and Zhang, Xiangyu Tony and Liu, Che and Lin, Qingjian and Peng, Yizhou and Liu, Hexin and others},
-  journal={arXiv preprint arXiv:2605.20755},
-  year={2026}
-}
-
 @article{zada2026linguistic,
-  title={Linguistic coupling between neural systems for speech production and comprehension during real-time dyadic conversations},
-  author={Zada, Zaid and Nastase, Samuel A and Speer, Sebastian and Mwilambwe-Tshilobo, Laetitia and Tsoi, Lily and Burns, Shannon M and Falk, Emily and Hasson, Uri and Tamir, Diana I},
-  journal={Neuron},
-  volume={114},
-  number={4},
-  pages={774--787},
-  year={2026},
-  publisher={Elsevier}
+  title     = {Linguistic coupling between neural systems for speech production and comprehension during real-time dyadic conversations},
+  author    = {Zada, Zaid and Nastase, Samuel A. and Speer, Sebastian and Mwilambwe-Tshilobo, Laetitia and Tsoi, Lily and Burns, Shannon M. and Falk, Emily and Hasson, Uri and Tamir, Diana I.},
+  journal   = {Neuron},
+  volume    = {114},
+  number    = {4},
+  pages     = {774--787},
+  year      = {2026},
+  publisher = {Elsevier}
+}
+
+% -- Learning from signals available only at training time
+@article{vapnik2009lupi,
+  title   = {A new learning paradigm: Learning using privileged information},
+  author  = {Vapnik, Vladimir and Vashist, Akshay},
+  journal = {Neural Networks},
+  volume  = {22},
+  number  = {5--6},
+  pages   = {544--557},
+  year    = {2009}
+}
+@inproceedings{christiano2017deep,
+  title     = {Deep Reinforcement Learning from Human Preferences},
+  author    = {Christiano, Paul F. and Leike, Jan and Brown, Tom and Martic, Miljan and Legg, Shane and Amodei, Dario},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  volume    = {30},
+  year      = {2017}
+}
+@inproceedings{ouyang2022rlhf,
+  title     = {Training language models to follow instructions with human feedback},
+  author    = {Ouyang, Long and Wu, Jeffrey and Jiang, Xu and Almeida, Diogo and Wainwright, Carroll and Mishkin, Pamela and Zhang, Chong and Agarwal, Sandhini and Slama, Katarina and Ray, Alex and others},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  volume    = {35},
+  pages     = {27730--27744},
+  year      = {2022}
+}
+
+% -- Weight updates (too data-hungry for HRI)
+@inproceedings{hu2022lora,
+  title     = {{LoRA}: Low-Rank Adaptation of Large Language Models},
+  author    = {Hu, Edward J. and Shen, Yelong and Wallis, Phillip and Allen-Zhu, Zeyuan and Li, Yuanzhi and Wang, Shean and Wang, Lu and Chen, Weizhu},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2022}
+}
+@inproceedings{rafailov2023dpo,
+  title     = {Direct Preference Optimization: Your Language Model is Secretly a Reward Model},
+  author    = {Rafailov, Rafael and Sharma, Archit and Mitchell, Eric and Manning, Christopher D. and Ermon, Stefano and Finn, Chelsea},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  year      = {2023}
+}
+
+% -- Activation steering
+@article{turner2023actadd,
+  title   = {Steering Language Models With Activation Engineering},
+  author  = {Turner, Alexander Matt and Thiergart, Lisa and Leech, Gavin and Udell, David and Vazquez, Juan J. and Mini, Ulisse and MacDiarmid, Monte},
+  journal = {arXiv preprint arXiv:2308.10248},
+  year    = {2023}
+}
+@article{zou2023repe,
+  title   = {Representation Engineering: A Top-Down Approach to {AI} Transparency},
+  author  = {Zou, Andy and Phan, Long and Chen, Sarah and Campbell, James and Guo, Phillip and Ren, Richard and Pan, Alexander and Yin, Xuwang and Mazeika, Mantas and Dombrowski, Ann-Kathrin and others},
+  journal = {arXiv preprint arXiv:2310.01405},
+  year    = {2023}
+}
+@inproceedings{rimsky2024caa,
+  title     = {Steering {Llama} 2 via Contrastive Activation Addition},
+  author    = {Rimsky, Nina and Gabrieli, Nick and Schulz, Julian and Tong, Meg and Hubinger, Evan and Turner, Alexander Matt},
+  booktitle = {Proceedings of ACL},
+  year      = {2024}
+}
+@article{chang2026overcoming,
+  title   = {Overcoming State Inertia in Full-Duplex Spoken Language Models via Activation Steering},
+  author  = {Chang, Cheng-Kuang and Chang, Kai-Wei and Liu, Alexander H. and Glass, James},
+  journal = {arXiv preprint arXiv:2606.11386},
+  year    = {2026}
+}
+
+% -- Logit steering
+@inproceedings{yang2021fudge,
+  title     = {{FUDGE}: Controlled Text Generation With Future Discriminators},
+  author    = {Yang, Kevin and Klein, Dan},
+  booktitle = {Proceedings of NAACL},
+  year      = {2021}
+}
+@inproceedings{krause2021gedi,
+  title     = {{GeDi}: Generative Discriminator Guided Sequence Generation},
+  author    = {Krause, Ben and Gotmare, Akhilesh Deepak and McCann, Bryan and Keskar, Nitish Shirish and Joty, Shafiq and Socher, Richard and Rajani, Nazneen Fatema},
+  booktitle = {Findings of EMNLP},
+  year      = {2021}
+}
+
+
+% ---------------------------------------------------------------------------
+% 5. Infrastructure
+% ---------------------------------------------------------------------------
+@incollection{al2012furhat,
+  title     = {Furhat: a back-projected human-like robot head for multiparty human-machine interaction},
+  author    = {Al Moubayed, Samer and Beskow, Jonas and Skantze, Gabriel and Granstr{\"o}m, Bj{\"o}rn},
+  booktitle = {Cognitive Behavioural Systems},
+  pages     = {114--130},
+  year      = {2012},
+  publisher = {Springer}
+}
+@inproceedings{mentzer2024fsq,
+  title     = {Finite Scalar Quantization: {VQ-VAE} Made Simple},
+  author    = {Mentzer, Fabian and Minnen, David and Agustsson, Eirikur and Tschannen, Michael},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2024}
+}
+
+
+% ---------------------------------------------------------------------------
+% 6. Reserve: not cited in the current draft. BibTeX omits uncited entries,
+%    so these cost no space; cite them or delete them before submission.
+% ---------------------------------------------------------------------------
+@inproceedings{houlsby2019adapters,
+  title     = {Parameter-Efficient Transfer Learning for {NLP}},
+  author    = {Houlsby, Neil and Giurgiu, Andrei and Jastrzebski, Stanislaw and Morrone, Bruna and De Laroussilhe, Quentin and Gesmundo, Andrea and Attariyan, Mona and Gelly, Sylvain},
+  booktitle = {Proceedings of ICML},
+  year      = {2019}
+}
+@inproceedings{dathathri2020pplm,
+  title     = {Plug and Play Language Models: A Simple Approach to Controlled Text Generation},
+  author    = {Dathathri, Sumanth and Madotto, Andrea and Lan, Janice and Hung, Jane and Frank, Eric and Molino, Piero and Yosinski, Jason and Liu, Rosanne},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2020}
+}
+@inproceedings{lester2021prompt,
+  title     = {The Power of Scale for Parameter-Efficient Prompt Tuning},
+  author    = {Lester, Brian and Al-Rfou, Rami and Constant, Noah},
+  booktitle = {Proceedings of EMNLP},
+  year      = {2021}
+}
+@inproceedings{li2021prefix,
+  title     = {Prefix-Tuning: Optimizing Continuous Prompts for Generation},
+  author    = {Li, Xiang Lisa and Liang, Percy},
+  booktitle = {Proceedings of ACL-IJCNLP},
+  year      = {2021}
+}
+@inproceedings{li2023iti,
+  title     = {Inference-Time Intervention: Eliciting Truthful Answers from a Language Model},
+  author    = {Li, Kenneth and Patel, Oam and Vi{\'e}gas, Fernanda and Pfister, Hanspeter and Wattenberg, Martin},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  year      = {2023}
+}
+@inproceedings{driess2023palme,
+  title     = {{PaLM-E}: An Embodied Multimodal Language Model},
+  author    = {Driess, Danny and Xia, Fei and Sajjadi, Mehdi S. M. and Lynch, Corey and Chowdhery, Aakanksha and Ichter, Brian and Wahid, Ayzaan and Tompson, Jonathan and Vuong, Quan and Yu, Tianhe and others},
+  booktitle = {Proceedings of the International Conference on Machine Learning (ICML)},
+  year      = {2023}
 }
