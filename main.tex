@@ -9,8 +9,7 @@
 
 \begin{document}
 \raggedbottom
-\title{Steering When, Where, and Whether Robots Should Speak}
-\subtitle{Data-Efficient Adapters for Full-Duplex Human--Robot Collaboration}
+\title{When, Where, and Whether to Speak: Teaching Robots to Communicate as Teammates}
 
 \begin{abstract}
 Large language models have largely solved \emph{what} a robot should say; in embodied, task-oriented dialogue the harder questions are \emph{when}, \emph{where}, and \emph{whether} to say it. Full-duplex speech models listen and speak at once and act through tool calls, yet cannot see their partner or the task, and off the shelf talk too much and act too rarely. My research asks how LLM-based agents can gain the temporal, spatial, and social awareness that natural collaboration requires, matching each adaptation to the data available for it. I built a collaborative-game testbed and corpus, and supervision signals from observed behaviour to self-reported enjoyment and brain activity. Where data is abundant (game self-play, gaze), I fine-tune the model to perceive and produce task state and gaze; where it is scarce (human signals), I steer it. A first steering prototype, which reads an open full-duplex model's hidden state and biases its logits, doubles turn-onset recall offline at a fixed false-start rate.
