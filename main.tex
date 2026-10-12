@@ -42,9 +42,10 @@ Large Language Models (LLMs) have made conversational robots fluent in \emph{wha
 
 Each decision has two parts. The \emph{general} part, what any good partner would do, depends on what the robot perceives at every moment: the partner's speech and gaze, and the task state. These streams exist at test time and in abundance: a game engine generates unlimited self-play~\cite{silver2018alphazero}, and conversational gaze is learnable from large corpora~\cite{agrawal2025seamless}. I add them as input and output channels of a full-duplex model (already proficient in conversational speech) and fine-tune it on them (Stage~1). The \emph{partner-specific} part, what this partner needs, depends on their internal state, revealed by signals such as enjoyment or brain states. These exist only in studies and in small amounts~\cite{anon2026dataset}, never at test time (\emph{privileged information}~\cite{vapnik2009lupi}). Stage~2 \emph{aligns} the model with people in two separate ways (Fig.~\ref{fig:overview}). First, human behaviour in this task is recorded in a single study, too little to fine-tune on, so a small intervention imitates it by steering the frozen model's logits. Second, predictors I train to recover partner state from interaction data act as a learned theory of mind: like the reward model in Reinforcement Learning from Human Feedback (RLHF), they turn scarce human signals into feedback that adapts the model's speech, gaze and actions to each partner. My overarching question is: \emph{how can a conversational robot become a collaborator that adapts its attention, timing, and actions to its partner, using observable interaction cues and predictions of the partner's internal state?}
 \begin{itemize}
- \item \textbf{RQ1 (grounding):} How can task state and partner gaze be incorporated into a full-duplex model, as input streams on its 80 ms clock with robot gaze as an output, so that what it says and does is grounded in the shared task?
- \item \textbf{RQ2 (imitating):} Can a small intervention, trained on a single study's data, align the frozen model's speech, gaze and actions with human behaviour by imitation?
- \item \textbf{RQ3 (adapting):} Can predicted partner state, learned where self-reports and brain data exist, serve as reinforcement feedback that adapts where, when and whether to each partner without measuring those signals at test time?
+ \item \textbf{RQ1 (predicting, prior work):} Can partner states that exist only in studies, self-reported enjoyment and measured brain activity, be predicted from interaction data alone?
+ \item \textbf{RQ2 (grounding):} How can task state and partner gaze be incorporated into a full-duplex model, as input streams on its 80 ms clock with robot gaze as an output, so that what it says and does is grounded in the shared task?
+ \item \textbf{RQ3 (imitating):} Can a small intervention, trained on a single study's data, align the frozen model's speech, gaze and actions with human behaviour by imitation?
+ \item \textbf{RQ4 (adapting):} Can predicted partner state, learned where self-reports and brain data exist, serve as reinforcement feedback that adapts where, when and whether to each partner without measuring those signals at test time?
 \end{itemize}
 
 \section{Background}
@@ -63,22 +64,22 @@ Full-duplex models speak when addressed or at silence, rarely when the situation
 \paragraph{Testbed and observed behaviour}
 I co-developed an open platform in which a participant and a Furhat robot~\cite{al2012furhat} play the cooperative board game \emph{Pandemic} on a shared touchscreen, with an inspectable game engine, a rule-based solver playing the robot's side, and an LLM-based grounded dialogue system~\cite{anon2026platform}. With it, we collected a corpus of 70 interactions with 36 participants, with a game-adaptive and a generic robot voice: audio, video, gaze and annotated transcripts, aligned with game logs and questionnaires~\cite{anon2026dataset}. Its human turn onsets and gaze are the \emph{observed} targets for Stage~2a.
 
-\paragraph{Self-reported experience}
+\paragraph{Self-reported experience (RQ1)}
 Enjoyment exists only in studies, reported once, afterwards. My Speech-to-Joy predicts it in real time from speech and text embeddings, outperforming an experienced HRI annotator and LLM baselines, even from audio alone~\cite{anon2025joy}. Retrained on my corpus's per-game ratings, it becomes a \emph{self-reported} partner-state signal (Stage~2b).
 
-\paragraph{Measured signals}
+\paragraph{Measured signals (RQ1)}
 Brain activity exists only in the scanner, yet it can index whether a partner comprehends the robot and models its mind. I adapted a multimodal whole-brain fMRI foundation model to predict it from live conversation, improving held-out prediction by 15\% over a ridge encoder~\cite{anon2026brainconv}. Across two fMRI corpora with human and robot partners (70 participants), transfer between partners was asymmetric where the robot's visual behaviour differed most from a human's~\cite{anon2026brainhri}, so such predictors are sensitive to robot behaviour.
 
 \section{Current and Future Work: Model Adaptation}
 \label{sec:current}
 
-\paragraph{Stage 1: grounding (RQ1)}
+\paragraph{Stage 1: grounding (RQ2)}
 On a JAX port of the game, a policy--value network trained by imitation and then Gumbel AlphaZero self-play~\cite{silver2018alphazero,danihelka2022gumbel} wins 71\% of games at rulebook difficulty, against 24\% for the solver; its last hidden layer can serve as the task-state stream, and its value $v$ as a general signal for whether to act. For gaze, I plan to add partner gaze as input and a head emitting quantised gaze tokens alongside speech~\cite{jiang2026moshiface,mentzer2024fsq}. The decisions are coupled: in the corpus, the robot looking at the participant predicts their next onset a second ahead, so where the robot looks changes when the partner speaks, and one model should make all three.
 
-\paragraph{Stage 2a: imitation via logit steering (RQ2, pilot)}
+\paragraph{Stage 2a: imitation via logit steering (RQ3, pilot)}
 Off the shelf, the model proposed 3.5$\times$ as many speech onsets as the participant it replaced, yet matched only a quarter of theirs ($\pm$960\,ms). Prompt rewrites did not change when it acted, and vetoes after the argmax failed: the model re-proposed, and denying every proposal silenced it for good. Interventions before the argmax worked, and the hidden state appears to know more than the head: a small recurrent head over $h_t$ predicted the partner's next onset with AUC 0.87 (leave-one-participant-out, 18 participants), against 0.51 for the model's own start-versus-wait margin, doubling onset recall at the same false-start rate. Turn onsets are the first target; the head is backbone-agnostic, so after Stage~1 it is retrained to imitate human gaze and actions too.
 
-\paragraph{Stage 2b: partner-state feedback (RQ3)}
+\paragraph{Stage 2b: partner-state feedback (RQ4)}
 Predictors of \emph{self-reported} and \emph{measured} signals act as a learned theory of mind and, like RLHF's reward model, provide reinforcement feedback: the model is fine-tuned against them, with a KL penalty toward the Stage~2a model, to adapt each decision to the partner: \emph{where}, raising mutual gaze when predicted comprehension drops; \emph{when}, waiting longer for a hesitant partner; and \emph{whether}, acting as $v$ drops only if it helps this partner, not just the game. Training runs offline on the corpus, then online. The pilot's override failures set a safety constraint: adapt timing, but never suppress every turn.
 
 \section{Evaluation}
